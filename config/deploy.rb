@@ -40,7 +40,6 @@ ssh_options[:forward_agent] = true
 # Custom deploy tasks
 namespace :deploy do
   after "deploy:update_code", "deploy:copy_production_configurations"
-  after "deploy:update_code", "deploy:symlink_themes_root"
 
   configurations_path = " #{shared_path}/config"
 
