@@ -5,7 +5,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :title
       t.string :actors
       t.string :tweet_id
-
+      t.integer :winner_id
       t.timestamps
     end
     
