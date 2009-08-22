@@ -3,5 +3,5 @@ class User < TwitterAuth::GenericUser
   # All of the authentication logic is handled by the 
   # parent TwitterAuth::GenericUser class.
   
-  has_many :winnings, :class_name => :questions, :foreign_key => 'winner_id'
+  has_many :winnings, :class_name => 'Question', :foreign_key => 'winner_id'
 end
