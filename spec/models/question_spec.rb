@@ -3,10 +3,10 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Question do
   before(:each) do
     @valid_attributes = {
-      :imdb_id => ,
+      :imdb_id => 123,
       :title => "value for title",
       :actors => "value for actors",
-      :tweet_id => 
+      :tweet_id => '12312'
     }
   end
 
