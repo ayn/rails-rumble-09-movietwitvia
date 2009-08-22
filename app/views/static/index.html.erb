@@ -1,12 +1,67 @@
-<h2>Welcome to Your Twitter Application!</h2>
+<!-- <h2>Welcome to Your Twitter Application!</h2>
 
 <p>You have successfully created a Twitter-ready application! To test it out just click on <strong>Login via Twitter</strong> above. You should be taken to Twitter and then back here where it will tell you that you are logged in!</p>
 
-<p>This template doesn't assume anything about how you want to build your application other than that you want to use Twitter authentication to do it, so you can generate any controllers, models, and anything else you like! You can tie it back to Twitter accounts simply by adding associations etc. to <code>app/models/user.rb</code>.</p>
+<p>This template doesn't assume anything about how you want to build your application other than that you want to use Twitter authentication to do it, so you can generate any controllers, models, and anything else you like! You can tie it back to Twitter accounts simply by adding associations etc. to <code>app/models/user.rb</code>.</p> -->
+<section>
+	<header>
+		<h2>The Answers</h2>
+	</header>
+	<ul class="hfeed tweets">
+	  <li class="hentry clear">
+	    <div class="thumb">
+	      	<img src="http://a1.twimg.com/profile_images/14716872/dm_normal.jpg" alt="Doug March (@Marchdoe)" />
+	    </div>
+	    <div class="tweet">
+			<p>@MovieTwitvia Lorem Ipsum Dollar <span class="ft">&nbsp;</span></p>
+	      <span class="author vcard">
+	        <a class="fn url" href="http://twitter.com/marchdoe">Doug March</a>
+	        <a href="#" class="date">
+	          <abbr class="published" title="timestamp goes here">answered 5 seconds ago</abbr>
+	        </a>
+	      </span>
+	    </div>
+	  </li>
+	
+	  <li class="hentry clear">
+	    <div class="thumb">
+	      	<img src="http://a1.twimg.com/profile_images/14716872/dm_normal.jpg" alt="Doug March (@Marchdoe)" />
+	    </div>
+	    <div class="tweet">
+		<p>@MovieTwitvia Lorem Ipsum Dollar Lorem Ipsum Lorem Ipsum<span class="ft">&nbsp;</span></p>
+	      <span class="author vcard">
+	        <a class="fn url" href="http://twitter.com/marchdoe">Doug March</a>
+	        <a href="#" class="date">
+	          <abbr class="published" title="timestamp goes here">answered 5 seconds ago</abbr>
+	        </a>
+	      </span>
+	    </div>
+	  </li>
+	
+	  <li class="hentry clear">
+	    <div class="thumb">
+	      	<img src="http://a1.twimg.com/profile_images/14716872/dm_normal.jpg" alt="Doug March (@Marchdoe)" />
+	    </div>
+	    <div class="tweet">
+		<p>@MovieTwitvia Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit pellentesque orci, vitae pellentesque nulla congue tempor. Donec lobortis eleifend ligula vitae aliquet. <span class="ft">&nbsp;</span></p>
+	      <span class="author vcard">
+	        <a class="fn url" href="http://twitter.com/marchdoe">Doug March</a>
+	        <a href="#" class="date">
+	          <abbr class="published" title="timestamp goes here">answered 5 seconds ago</abbr>
+	        </a>
+	      </span>
+	    </div>
+	  </li>
+	</ul>
+</section>
+
 
 <% if @users.any? %>
-  <h2>Recently Joined</h2>
+  <h2>The Contestants</h2>
   <% for user in @users %>
     <%= link_to profile_image(user), twitter_profile_url(user), :target => "_blank" %>
   <% end %>
 <% end %>
+
+
+
