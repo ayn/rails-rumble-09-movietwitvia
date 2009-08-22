@@ -33,12 +33,16 @@ class TwitterAuthMigration < ActiveRecord::Migration
       # Probably don't need both, but they're here.
       t.integer :utc_offset
       t.string :time_zone
+      
+      # app specific stuff
+      t.integer :wins_count
 
       t.timestamps
     end
     
     add_index :users, :login
     add_index :users, :twitter_id
+    add_index :users, :wins_count
   end
 
   def self.down
