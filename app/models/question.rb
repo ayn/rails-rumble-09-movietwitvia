@@ -1,6 +1,9 @@
 class Question < ActiveRecord::Base
   belongs_to :winner, :class_name => 'User'
   
+  named_scope :weekly, :conditions => ['updated_at > ?', 1.week.ago]
+  named_scope :daily, :conditions => ['updated_at > ?', 1.day.ago]
+  
   def send_tweet
     setup_twitter
     status = @twitter.status(:post, get_question)
