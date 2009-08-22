@@ -8,7 +8,7 @@
 		<h2>The Answers</h2>
 	</header>
 	<ul class="hfeed tweets">
-	  <li class="hentry clear">
+	  <li class="hentry clear first">
 	    <div class="thumb">
 	      	<img src="http://a1.twimg.com/profile_images/14716872/dm_normal.jpg" alt="Doug March (@Marchdoe)" />
 	    </div>
@@ -23,7 +23,7 @@
 	    </div>
 	  </li>
 	
-	  <li class="hentry clear">
+	  <li class="hentry clear winner">
 	    <div class="thumb">
 	      	<img src="http://a1.twimg.com/profile_images/14716872/dm_normal.jpg" alt="Doug March (@Marchdoe)" />
 	    </div>
@@ -57,10 +57,12 @@
 
 
 <% if @users.any? %>
-  <h2>The Contestants</h2>
+<section>
+  <header><h2>The Contestants</h2></header>
   <% for user in @users %>
     <%= link_to profile_image(user), twitter_profile_url(user), :target => "_blank" %>
   <% end %>
+</section>
 <% end %>
 
 

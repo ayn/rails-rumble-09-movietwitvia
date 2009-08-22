@@ -29,9 +29,10 @@ aside 							{ display: table-cell; width: 300px; }
 
 /* TWEETS
 ================================= */
-ul.tweets 								{ position: relative; z-index: 3; margin: 0; list-style: none; }
-ul.tweets li 							{ padding: 0 0 15px 0; margin: 0 0 15px 0; border-bottom: 1px solid #e1e1e1; display: inline-block; }
-ul.tweets li .thumb 					{ padding: 2px; height: 50px; width: 50px; float: left; border: 1px solid #e1e1e1; background-color: #fff; }
+ul.tweets 								{ position: relative; z-index: 3; margin: 0 0 15px 0; list-style: none; }
+ul.tweets li 							{ padding: 15px 0; border-bottom: 1px solid #e1e1e1; display: inline-block; }
+ul.tweets li.first						{ padding: 0 0 15px 0; }
+ul.tweets li .thumb 					{ margin-left: 10px; padding: 2px; height: 50px; width: 50px; float: left; border: 1px solid #e1e1e1; background-color: #fff; }
 ul.tweets li .thumb a img 				{ height: 48px; width: 48px; }
 ul.tweets li .tweet 					{ padding-left: 75px; }
 ul.tweets li .tweet h2 					{ line-height: 20px; margin-bottom: 5px; }
@@ -44,9 +45,10 @@ ul.tweets li .tweet a.date				{ color: #8B8A8A; font-size:9px; text-decoration:n
 ul.tweets li .tweet a.date:hover		{ color: #555; }	
 ul.tweets li .tweet .ft					{ position: absolute; left: 7px; bottom: -9px; background: transparent url("../images/carrot.png") no-repeat 0 0; width:9px; height: 9px; }
 
-ul.tweets li .tweet p 					{ width: 450px; position: relative; padding: 5px 12px; margin: 5px 68px 6px 0; line-height: 16px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #e1e1e1; }
+ul.tweets li .tweet p 					{ background-color: #fff; width: 450px; position: relative; padding: 5px 12px; margin: 0 68px 6px 0; line-height: 16px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #e1e1e1; }
 ul.tweets li .tweet h5 a 				{ color: #444; }
 
+ul.tweets li.winner						{ background-color: lightblue; }
 
 /* BUTTONS
 ================================= */
