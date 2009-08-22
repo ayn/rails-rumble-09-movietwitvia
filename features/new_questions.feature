@@ -30,9 +30,3 @@ Feature: new trivia question
 #     When I import the movie
 #     Then it should populate the questions table with imdb_id, title, and actors
 # 
-# Feature: construct a question
-#   I want to construct a question
-#   Scenario: construct a question
-#     Given a movie title "Shrek", year "2003", and actors "Mike Meyers, Eddie Murphy"
-#     When I want a question
-#     Then it should return "Which movie did Mike Meyers and Eddie Murphy star in 2003?"
