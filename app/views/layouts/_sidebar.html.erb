@@ -23,7 +23,7 @@
       <h2>The Leaders</h2>
     </header>
     
-    <p><%= link_to '24 hours', static_path(:time_period => '24-hours') -%>, <%= link_to 'week', static_path(:time_period => 'last-week') -%>, <%= link_to 'all time', static_path -%></p>
+    <p class="sort"><%= link_to '24 hours', static_path(:time_period => '24-hours'), :class=>"current" -%> <%= link_to 'week', static_path(:time_period => 'last-week') -%> <%= link_to 'all time', static_path -%></p>
     
     <ol>
       <% @leaders.each do |leader| %>

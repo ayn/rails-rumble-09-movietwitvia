@@ -1,8 +1,11 @@
 /* Tell the browser to render HTML 5 elements as block */
 header, footer, section, aside, nav, article { display: block; }
+html							{ background: #083d6f url("../images/html-bg.png") repeat-x 0 0; }
+body 							{ background-color: transparent; margin: 0 auto; padding: 22px 0; width: 970px; position: relative; }
+.container 						{ /*-moz-box-shadow: 0px 0px 10px #C8C8C8; -webkit-box-shadow: 0px 0px 10px #C8C8C8;*/ /*background-color: #fff;*/ padding: 15px 15px 0 15px; margin: 0;/* -moz-border-radius: 10px; -webkit-border-radius: 10px;*/ }
 
-body 							{ background-color: #cef; margin: 0 auto; padding: 22px 0; width: 970px; position: relative; }
-.container 						{ -moz-box-shadow: 0px 0px 10px #C8C8C8; -webkit-box-shadow: 0px 0px 10px #C8C8C8; background-color: #fff; padding: 15px 15px 0 15px; margin: 0; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
+
+/*.container 						{ background: transparent url("../images/grid.png") repeat-y top center; }*/
 
 /* WIDELY USED CLASSES */
 .clear 							{ clear: both; }
@@ -15,17 +18,28 @@ div.notice 						{ background: #cfc; border-color: #191; color: #131; }
 ================================= */
 header.brand					{ position: relative; height: 75px; margin-bottom: 20px; }
 header.brand h1					{ margin: 0 0 10px 0; padding: 0; border: none; }
-header.brand h1 a.logo			{ position: relative; margin: 0; padding: 0; display: inline-block; font-weight: bold; }
+header.brand h1 a.logo			{ position: relative; margin: 0; padding: 0; display: inline-block; font-weight: bold; color: #fff; }
 
 header #user_bar				{ position: absolute; right: 0; top: 0; }
+header #user_bar a.login		{ background: transparent url("../images/sign-in-with-twitter.png") no-repeat top left; width: 151px; height: 24px; display: block; text-indent: -9999px; }
+
+header #user_bar				{ background-color: #fff;  -moz-border-radius: 4px; -webkit-border-radius: 4px; padding: 4px 8px; }
+header #user_bar p 				{ margin: 0 0 0 30px; padding: 8px 10px; }
+header #user_bar p a			{ border-left: 1px solid #ccc; margin-left: 8px; padding-left: 10px; }
+header #user_bar img 			{ position: absolute; top:6px; left:10px; padding: 2px; border: 1px solid #e1e1e1; }
+
 
 /* CONTENT AREA // SIDEBAR
 ------------------------------*/
 .content 						{ display: table; }
 .body		 					{ display: table-cell; width: 620px; padding-right: 22px; }
+section							{ background-color: #fff; padding: 15px; margin-bottom: 15px; -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 section header					{ margin-bottom: 8px; border-bottom: 1px solid #e1e1e1; }
 aside 							{ display: table-cell; width: 300px; }
 
+p.sort							{ text-align: right; border-bottom: 1px solid #e1e1e1; padding-bottom: 8px; margin-bottom: 8px; }
+p.sort a						{ background-color: #ccc; -moz-border-radius: 4px; -webkit-border-radius: 4px; color: #fff; padding: 3px 5px; }
+p.sort a.current, p.sort a:hover.current	{ background-color: #083d6f;}
 
 /* TWEETS
 ================================= */
@@ -45,7 +59,7 @@ ul.tweets li .tweet a.date				{ color: #8B8A8A; font-size:9px; text-decoration:n
 ul.tweets li .tweet a.date:hover		{ color: #555; }	
 ul.tweets li .tweet .ft					{ position: absolute; left: 7px; bottom: -9px; background: transparent url("../images/carrot.png") no-repeat 0 0; width:9px; height: 9px; }
 
-ul.tweets li .tweet p 					{ background-color: #fff; width: 450px; position: relative; padding: 5px 12px; margin: 0 68px 6px 0; line-height: 16px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #e1e1e1; }
+ul.tweets li .tweet p 					{ background-color: #fff; width: 420px; position: relative; padding: 5px 12px; margin: 0 68px 6px 0; line-height: 16px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #e1e1e1; }
 ul.tweets li .tweet h5 a 				{ color: #444; }
 
 ul.tweets li.winner						{ background-color: lightblue; }
@@ -112,15 +126,9 @@ aside section ul li a:hover 		{ text-decoration: underline; }
 
 /* FOOTER
 ------------------------------*/
-footer div 							{ display: table; margin: 90px auto 0; padding: 0; }
-footer div section 					{ display: table-cell; width: 300px; }
-footer div .about, 
-footer div .links					{ padding-right: 20px; }
-footer div header h3				{ border-bottom:3px solid #C8C8C8; }
+footer div 							{ display: block; padding: 0; text-align: center; }
 footer p 							{ margin-top: 10px; }
-footer ul 							{ margin: 10px 0 0 0; list-style: none; color: #565656; }
-footer ul li						{ margin-bottom: 10px; }
-footer ul li a 						{ display: block; }
+footer section						{ padding-top: 2px; padding-bottom: 2px;}
 
 
 
