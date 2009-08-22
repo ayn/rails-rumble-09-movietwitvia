@@ -29,6 +29,10 @@ class Question < ActiveRecord::Base
     u.update_attribute(:wins_count, u.wins_count + 1)
   end
   
+  def self.next_random_question
+    Rails.cache.fetch('current_question') { Question.find((rand*(Question.count)).truncate, :conditions => ['winner_id IS NULL']) }
+  end
+  
   protected
   
   def setup_twitter
