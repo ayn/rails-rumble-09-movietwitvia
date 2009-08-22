@@ -12,20 +12,27 @@
 <body>
 	<div class="container">
 		<%= render "layouts/brand" %>
+		
+		<% if flash[:error] %>
+          <div class='flash error'><%= flash[:error] %></div>
+        <% end %><% if flash[:notice] %>
+          <div class='flash notice'><%= flash[:notice] %></div>
+        <% end %>
 
 		<div class="content">
 			<div class="body">
-				<section>
+				<section>			
 					<header>
-					  <h1></h1>
+					  <h2>The Question</h2>
 					</header>
-					<% if flash[:error] %>
-			          <div class='flash error'><%= flash[:error] %></div>
-			        <% end %><% if flash[:notice] %>
-			          <div class='flash notice'><%= flash[:notice] %></div>
-			        <% end %>
-			        <%= yield %>
+					
+					<p>This is where the question will go, it will look something like this</p>
+					<p>Actor Actor Actor</p>
+					<p>This question is closed, the next question will be asked in 15 minutes (countdown)</p>
 				</section>
+			    
+			    <%= yield %>
+
 			</div>
 			<%= render "layouts/sidebar" %>
 		</div>
