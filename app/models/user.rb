@@ -4,4 +4,6 @@ class User < TwitterAuth::GenericUser
   # parent TwitterAuth::GenericUser class.
   
   has_many :winnings, :class_name => 'Question', :foreign_key => 'winner_id'
+
+  named_scope :leaderboard_all_time, :order => :wins_count
 end
