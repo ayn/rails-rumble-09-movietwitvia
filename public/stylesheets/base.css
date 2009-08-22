@@ -1,0 +1,132 @@
+/* Tell the browser to render HTML 5 elements as block */
+header, footer, section, aside, nav, article { display: block; }
+
+body 							{ background-color: #cef; margin: 0 auto; padding: 22px 0; width: 970px; position: relative; }
+.container 						{ -moz-box-shadow: 0px 0px 10px #C8C8C8; -webkit-box-shadow: 0px 0px 10px #C8C8C8; background-color: #fff; padding: 15px 15px 0 15px; margin: 0; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
+
+/* WIDELY USED CLASSES */
+.clear 							{ clear: both; }
+
+div.flash 						{ padding: 4px 8px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; border: 2px solid #ccc; margin: 10px 0; }
+div.error 						{ background: #fcc; border-color: #911; color: #311; }
+div.notice 						{ background: #cfc; border-color: #191; color: #131; }
+
+/* HEADER
+================================= */
+header.brand					{ position: relative; height: 75px; margin-bottom: 20px; }
+header.brand h1					{ margin: 0 0 10px 0; padding: 0; border: none; }
+header.brand h1 a.logo			{ position: relative; margin: 0; padding: 0; display: inline-block; font-weight: bold; }
+
+header #user_bar				{ position: absolute; right: 0; top: 0; }
+
+/* CONTENT AREA // SIDEBAR
+------------------------------*/
+.content 						{ display: table; }
+.body		 					{ display: table-cell; width: 620px; padding-right: 22px; }
+#permalink .body				{ display: block; width: 934px; }
+aside 							{ display: table-cell; width: 300px; }
+
+
+/* TWEETS
+================================= */
+ul.tweets 								{ position: relative; z-index: 3; margin: 0; list-style: none; }
+ul.tweets li 							{ padding: 0 0 15px 0; margin: 0 0 15px 0; border-bottom: 1px solid #c8c8c8; min-height: 105px; }
+ul.tweets li .thumb 					{ padding: 2px; height: 96px; width: 96px; float: left; border: 1px solid #e1e1e1; background-color: #fff; }
+ul.tweets li .thumb a img 				{ height: 96px; width: 96px; }
+ul.tweets li .tweet 					{ padding-left: 118px; }
+ul.tweets li .tweet h2 					{ line-height: 20px; margin-bottom: 5px; }
+ul.tweets li .tweet h2 a:hover			{ text-decoration: underline; }
+ul.tweets li .tweet span.author			{ text-align: left; width: 115px; float: right; color: #8B8A8A; margin-top: 5px; text-decoration:none; text-transform:uppercase;}
+ul.tweets li .tweet span a 				{ text-decoration: underline; text-transform: lowercase; }
+ul.tweets li .tweet a.fn 				{ font-weight: 500; color: #555; text-decoration:none; }
+ul.tweets li .tweet a.fn:hover 			{ color: #555; text-decoration:underline; }
+ul.tweets li .tweet a.date				{ color: #8B8A8A; font-size:9px; text-decoration:none; text-transform:lowercase; }
+ul.tweets li .tweet a.date:hover		{ color: #555; }	
+ul.tweets li .tweet .ft					{ position: absolute; right: -9px; top: 6px; background: transparent url("../images/carrot.png") no-repeat 0 0; width:9px; height: 9px; }
+
+ul.tweets li .tweet p 					{ width: 338px; position: relative; padding: 5px 12px; margin: 5px 130px 0 0; line-height: 16px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #e1e1e1; }
+ul.tweets li .tweet h5 a 				{ color: #444; }
+
+
+/* BUTTONS
+================================= */
+.button, .button:visited {
+	background: #222 url("../images/overlay.png") repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+}
+
+	.button:hover							{ background-color: #111; color: #fff; }
+	.button:active							{ top: 1px; }
+	.small.button, .small.button:visited 			{ font-size: 11px; padding: ; }
+	.button, .button:visited,
+	.medium.button, .medium.button:visited 		{ font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
+	.large.button, .large.button:visited 			{ font-size: 14px; padding: 8px 14px 9px; }
+	
+	.green.button, .green.button:visited		{ background-color: #91bd09; }
+	.green.button:hover						{ background-color: #749a02; }
+	.blue.button, .blue.button:visited		{ background-color: #2daebf; }
+	.blue.button:hover							{ background-color: #007d9a; }
+	.red.button, .red.button:visited			{ background-color: #e33100; }
+	.red.button:hover							{ background-color: #872300; }
+	.magenta.button, .magenta.button:visited		{ background-color: #a9014b; }
+	.magenta.button:hover							{ background-color: #630030; }
+	.orange.button, .orange.button:visited		{ background-color: #ff5c00; }
+	.orange.button:hover							{ background-color: #d45500; }
+	.yellow.button, .yellow.button:visited		{ background-color: #ffb515; }
+	.yellow.button:hover							{ background-color: #fc9200; }
+
+
+/* SIDEBAR
+------------------------------*/
+aside section						{ margin-bottom: 30px; }
+aside section header				{ margin-bottom: 8px; border-bottom: 1px solid #e1e1e1; }
+aside section header h3				{ font-size: 18px; }
+aside section ul 					{ margin: 0; list-style: none; }
+aside section ul li					{ margin-bottom: 8px; }
+aside section ul li a 				{ display: block; text-decoration: none; color: #000; }
+aside section ul li a:hover 		{ text-decoration: underline; }
+
+/* PAGINATION 
+------------------------------*/
+.pagination a 						{ border:solid 1px #C8C8C8; margin-right:2px;}
+.pagination .disabled.prev_page,
+.pagination .disabled.next_page 	{ border: solid 1px #C8C8C8; color:#888888; display: inline-block; /*float:left;*/ font-weight:bold; margin-right:2px; padding:4px 6px; }
+.pagination .next_page a,
+.pagination .prev_page a 			{ font-weight: bold; }
+.pagination .current				{ background:#2e6ab1; color:#FFFFFF; font-weight: bold; display: inline-block; /*float:left;*/ padding:4px 8px; }
+.pagination a:link,
+.pagination a:visited 				{ color:#0e509e; display: inline-block; /*float:left;*/ padding:3px 6px; text-decoration:none; }
+.pagination a:hover 				{ border:solid 1px #0e509e; }
+.pagination .gap					{color:#2c6f00; font-weight:bold; display: inline-block; }
+
+/* FOOTER
+------------------------------*/
+footer div 							{ display: table; margin: 90px auto 0; padding: 44px 0; }
+footer div section 					{ display: table-cell; width: 300px; }
+footer div .about, 
+footer div .links					{ padding-right: 20px; }
+footer div header h3				{ border-bottom:3px solid #C8C8C8; }
+footer p 							{ margin-top: 10px; }
+footer ul 							{ margin: 10px 0 0 0; list-style: none; color: #565656; }
+footer ul li						{ margin-bottom: 10px; }
+footer ul li a 						{ display: block; }
+
+
+
+
+
+
+
+
+
+
