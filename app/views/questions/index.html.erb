@@ -1,0 +1,26 @@
+<h1>Listing questions</h1>
+
+<table>
+  <tr>
+    <th>Imdb</th>
+    <th>Title</th>
+    <th>Actors</th>
+    <th>Tweet</th>
+  </tr>
+
+<% @questions.each do |question| %>
+  <tr>
+    <td><%=h question.imdb_id %></td>
+    <td><%=h question.title %></td>
+    <td><%=h question.actors %></td>
+    <td><%=h question.tweet_id %></td>
+    <td><%= link_to 'Show', question %></td>
+    <td><%= link_to 'Edit', edit_question_path(question) %></td>
+    <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New question', new_question_path %>

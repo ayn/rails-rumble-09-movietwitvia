@@ -1,0 +1,23 @@
+<p>
+  <b>Imdb:</b>
+  <%=h @question.imdb_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @question.title %>
+</p>
+
+<p>
+  <b>Actors:</b>
+  <%=h @question.actors %>
+</p>
+
+<p>
+  <b>Tweet:</b>
+  <%=h @question.tweet_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

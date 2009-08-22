@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  imdb_id: 
+  title: MyString
+  actors: MyString
+  tweet_id: 
+
+two:
+  imdb_id: 
+  title: MyString
+  actors: MyString
+  tweet_id: 

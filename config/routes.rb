@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :questions
+
   map.static '/:action', :controller => 'static'
 
   map.root :controller => 'static', :action => 'index'

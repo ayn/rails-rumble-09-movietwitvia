@@ -1,0 +1,28 @@
+<h1>Editing question</h1>
+
+<% form_for(@question) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :imdb_id %><br />
+    <%= f.text_field :imdb_id %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :actors %><br />
+    <%= f.text_field :actors %>
+  </p>
+  <p>
+    <%= f.label :tweet_id %><br />
+    <%= f.text_field :tweet_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @question %> |
+<%= link_to 'Back', questions_path %>
