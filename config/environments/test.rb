@@ -37,3 +37,4 @@ config.gem "nokogiri", :lib => false, :version => ">= 1.2.3"
 config.gem 'cucumber'
 config.gem 'notahat-machinist', :lib => 'machinist'
 config.gem 'faker'
+config.gem 'mocha'
