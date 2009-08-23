@@ -2,7 +2,7 @@ class StaticController < ApplicationController
   def index
     @users = User.all(:order => "created_at DESC", :limit => 16)
     @leaders = User.leaderboard(params[:time_period] || 'all-time')
-    @question = Rails.cache.read('current_question') || Question.next_random_question
+    @question = Rails.cache.fetch('current_question'){ Question.next_random_question }
   end
 
   def mentions
@@ -23,13 +23,13 @@ class StaticController < ApplicationController
     logger.debug { "all_mentions is #{all_mentions.inspect}" }
     logger.debug { "browser_since_id is #{session[:browser_since_id].to_i}" }
 
-    unless (browser_since_id = session[:browser_since_id].to_i) == 0
+    unless (browser_since_id = session[:browser_since_id].to_i) == 0 || params[:new_page_load].to_i == 1
       @mentions = []
       
       all_mentions.each do |m|
         if m['id'].to_i > browser_since_id.to_i
           logger.debug { "m.id = #{m['id']}, browser_since_id = #{browser_since_id}" }
-          @mentions.shift(m)
+          @mentions << m
         else
           break
         end
@@ -41,7 +41,7 @@ class StaticController < ApplicationController
     session[:browser_since_id] = @mentions.first['id'] unless @mentions.empty?
     
     logger.debug { "mentions are #{@mentions.inspect}" }
-    render :partial => 'mention', :collection => @mentions
+    render :action => 'mentions', :layout => false
   end
   
   def reset_session

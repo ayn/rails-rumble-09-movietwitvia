@@ -26,6 +26,7 @@
 
 <script type="text/javascript">
 $(function(){
+  new_page_load = 1;
   loadMentions();
 });
 
@@ -33,14 +34,19 @@ function loadMentions() {
   $.ajax({
     type: "GET",
     url: "/mentions",
+    data: ({new_page_load : new_page_load}),
     dataType: "html",
     success: function(html) {
       $('#loading_mentions').fadeOut('slow');
       $('#mentions').prepend(html);
-      if ($('#mentions .tweet p')) last_tweet_id = $('#mentions .tweet p')[0].id;
+      $('.new_mentions').slideDown("slow").removeClass('new_mentions');
+      if ($('#mentions .tweet p')) {
+        last_tweet_id = $('#mentions .tweet p:first').id;
+        new_page_load = 0;
+      }
       setTimeout(function() {
           loadMentions();
-        }, 600000
+        }, 60000
       );
     }
   });
