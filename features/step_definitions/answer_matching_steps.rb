@@ -23,7 +23,7 @@ When /^we compare them the answers$/ do
 end
 
 Then /^we should announce the winner$/ do
-  Twitter::Client.expects(:from_config).with(File.join(RAILS_ROOT, 'config', 'twitter4r.yml')).returns(@t = mock('twitter'))
+  Twitter::Client.expects(:from_config).with(File.join(RAILS_ROOT, 'config', 'twitter4r.yml'), 'test').returns(@t = mock('twitter'))
   @t.expects(:status).with(:post, "The winner is @ang_410.").returns(stub(:id => '123'))
   @movie.tweet_winner(@status.user.screen_name)
 end

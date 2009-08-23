@@ -5,7 +5,7 @@ Given /^a new question$/ do
 end
 
 When /^we start a new round$/ do
-  Twitter::Client.expects(:from_config).with(File.join(RAILS_ROOT, 'config', 'twitter4r.yml')).returns(@t = mock('twitter'))
+  Twitter::Client.expects(:from_config).with(File.join(RAILS_ROOT, 'config', 'twitter4r.yml'), 'test').returns(@t = mock('twitter'))
   @t.expects(:status).with(:post, @question.get_question).returns(stub(:id => '123'))  
 end
 

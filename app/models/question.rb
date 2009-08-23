@@ -14,7 +14,7 @@ class Question < ActiveRecord::Base
   end
   
   def get_question
-    %Q{What movie did #{actors.split(/, /).to_sentence} star in #{year}?}
+    %Q{What movie did #{actors.split(/, /).to_sentence} star in #{year}? #MovieTwitvia #RailsRumble}
   end
   
   def match_title(text)
