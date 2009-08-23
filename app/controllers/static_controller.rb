@@ -6,7 +6,7 @@ class StaticController < ApplicationController
   end
 
   def mentions
-    all_mentions = Rails.cache.fetch("all_mentions", :expires_in => 5.minutes) do
+    all_mentions = Rails.cache.fetch("all_mentions", :expires_in => 30.seconds) do
       existing_mentions = Rails.cache.read('existing_mentions') || []
       # me = Rails.cache.fetch('twitvia_twitter_user') { User.find_by_twitter_id('67771125') }
       me = User.find_by_twitter_id('67771125')
