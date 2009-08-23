@@ -17,7 +17,7 @@ class StaticController < ApplicationController
       since_id = Rails.cache.read('since_id') || 0
       req = "/statuses/mentions.json"
       req += "?since_id=#{since_id}" if since_id != 0
-      mentions_since_last_fetch = User.find_by_twitter_id('67771125').twitter.get(req)
+      mentions_since_last_fetch = User.find_by_twitter_id('67771125').twitter.get(req) || []
       last_100_mentions = ( mentions_since_last_fetch + existing_mentions ).last(100)
       Rails.cache.write('since_id', last_100_mentions.first['id'])
       Rails.cache.write('existing_mentions', last_100_mentions)
