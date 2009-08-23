@@ -13,6 +13,6 @@ form label { display:block; text-align:left; cursor:hand; }
 fieldset { margin: 0; }
  
 /* ------------ Textarea Input Select --------------- */
-textarea		{ width: 579px; padding:5px 4px; margin-bottom: 5px; }
+textarea		{ width: 300px; padding:5px 4px; margin-bottom: 5px; }
 /*textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="file"]:focus {  }*/
 input[type="submit"] { float: right; }

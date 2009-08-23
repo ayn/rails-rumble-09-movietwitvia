@@ -15,27 +15,29 @@
         
         <li class="step3">
           <p>@MovieTwitvia will send you a question 
-			<span>"What movie did Woody Allen, Diane Keaton, and Tony Roberts star in 1977?"</span></p>
+			<span>"What movie did Chevy Chase, Bill Murray, and Cindy Morgan star in 1980?"</span></p>
 		  <p>Send us the answer
-          	<span>"@MovieTwitvia is it Annie Hall?"</span></p>
+          	<span>"@MovieTwitvia is it Caddyshack?"</span></p>
         </li>
         
         <li class="step4"><p>Sit tight and find out if you are the winner of the round and get ready for the next question</p></li>
       </ol>
 
     <header>
-      <h2>The Leaders</h2>
+      <h2>Leaders 
+		<span class="sort">
+	      <%= link_to '24 hours', static_path(:time_period => '24-hours'), :class => "#{'current' if params[:time_period] == '24-hours'}" -%>
+	      <%= link_to 'this week', static_path(:time_period => 'last-week'), :class => "#{'current' if params[:time_period] == 'last-week'}" -%>
+	      <%= link_to 'all time', static_path, :class => "#{'current' if params[:time_period] == 'all-time' || params[:time_period].nil?}" -%>
+	    </span>
+	</h2>
     </header>
     
-    <p class="sort">
-      <%= link_to '24 hours', static_path(:time_period => '24-hours'), :class => "#{'current' if params[:time_period] == '24-hours'}" -%>
-      <%= link_to 'this week', static_path(:time_period => 'last-week'), :class => "#{'current' if params[:time_period] == 'last-week'}" -%>
-      <%= link_to 'all time', static_path, :class => "#{'current' if params[:time_period] == 'all-time' || params[:time_period].nil?}" -%>
-    </p>
+
     
-    <ol>
+    <ol class="leaders">
       <% @leaders.each do |leader| %>
-        <li><%= link_to "#{leader.login}", twitter_profile_url(leader) %> <%= leader.winnings.send(User::METHOD_MAP[params[:time_period] || 'all-time']).size %></li>
+        <li><span><%= leader.winnings.send(User::METHOD_MAP[params[:time_period] || 'all-time']).size %></span> <%= link_to "#{leader.login}", twitter_profile_url(leader) %> </li>
       <% end %>
     </ol>
 
@@ -52,7 +54,7 @@
       loop: true,
       title: '',
       subject: '',
-      width: 270,
+      width: 250,
       height: 100,
       theme: {
         shell: {
