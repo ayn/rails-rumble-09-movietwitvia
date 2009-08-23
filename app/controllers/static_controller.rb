@@ -12,7 +12,7 @@ class StaticController < ApplicationController
   
   def current_question
     @question = Question.next_random_question
-    render :text => @question.get_question(true)
+    render :text => @question.get_question(:insert_spans => true)
   end
 
   def mentions

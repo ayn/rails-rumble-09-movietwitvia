@@ -13,9 +13,9 @@ class Question < ActiveRecord::Base
     self.update_attributes({ :tweet_id => status.id, :is_current => true })
   end
   
-  def get_question(insert_spans=false)
+  def get_question(options={})
     r = %Q{What movie did #{actors.split(/, /).to_sentence} star in #{year}? #MovieTwitvia #RailsRumble}
-    insert_spans ? r.gsub(/(#\w+)/, "<span>"+$1+"</span>") : r
+    options.delete(:insert_spans) ? r.gsub(/#\w+/) { |s| "<span>#{s}</span>" } : r
   end
   
   def match_title(text)
