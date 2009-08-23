@@ -47,7 +47,7 @@ span.sort a										{ background-color: #ccc; -moz-border-radius: 4px; -webkit-
 span.sort a.current, span.sort a:hover.current	{ background-color: #083d6f;}
 
 section#question header h2, section#answers header h2, section#contestants header h2		{ color: #00a513; }
-section#question h3				{ font-weight: bold; margin-top: 15px; }
+section#question h3				{ font-weight: bold; margin-top: 15px; line-height: 1.3em; }
 
 /* TWEETS
 ================================= */
