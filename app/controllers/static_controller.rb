@@ -1,19 +1,17 @@
 class StaticController < ApplicationController
   def index
     @users = User.all(:order => "created_at DESC", :limit => 16)
-    @leaders = User.leaderboard(params[:time_period] || 'all-time')
+    @leaders = User.leaderboard(params[:time_period] || 'all-time') 
     @question = Question.next_random_question
   end
 
   def mentions
     all_mentions = Rails.cache.fetch("all_mentions", :expires_in => 30.seconds) do
       existing_mentions = Rails.cache.read('existing_mentions') || []
-      # me = Rails.cache.fetch('twitvia_twitter_user') { User.find_by_twitter_id('67771125') }
-      me = User.find_by_twitter_id('67771125')
       since_id = Rails.cache.read('since_id') || 0
       req = "/statuses/mentions.json"
       req += "?since_id=#{since_id}" if since_id != 0
-      mentions_since_last_fetch = Rails.cache.fetch('twitvia_twitter_user') { User.find_by_twitter_id('67771125') }.twitter.get(req)
+      mentions_since_last_fetch = User.find_by_twitter_id('67771125').twitter.get(req)
       last_100_mentions = ( mentions_since_last_fetch + existing_mentions ).last(100)
       Rails.cache.write('since_id', last_100_mentions.first['id'])
       Rails.cache.write('existing_mentions', last_100_mentions)
