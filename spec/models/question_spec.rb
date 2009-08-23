@@ -6,7 +6,10 @@ describe Question do
       :imdb_id => 123,
       :title => "value for title",
       :actors => "value for actors",
-      :tweet_id => '12312'
+      :tweet_id => '12312',
+      :winner_id => '456',
+      :year => '2009',
+      :movie_poster => 'link to image'
     }
   end
 
