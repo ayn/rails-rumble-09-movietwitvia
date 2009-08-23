@@ -24,8 +24,8 @@ header.brand h1 a.logo			{ height: 50px; position: relative; margin: 0; padding:
 header #user_bar				{ position: absolute; right: 0; top: 0; }
 header #user_bar a.login		{ background: transparent url("../images/sign-in-with-twitter.png") no-repeat top left; width: 151px; height: 24px; display: block; text-indent: -9999px; }
 
-header #user_bar				{ background-color: #fff;  -moz-border-radius: 4px; -webkit-border-radius: 4px; padding: 4px 8px; min-width: 284px; }
-header #user_bar p 				{ margin: 0 0 0 30px; padding: 8px 10px; }
+header #user_bar				{ background-color: #fff;  -moz-border-radius: 4px; -webkit-border-radius: 4px; padding: 4px 8px; }
+header #user_bar p 				{ margin: 0 0 0 30px; padding: 8px 10px; min-width: 235px; }
 header #user_bar p a			{ border-left: 1px solid #ccc; margin-left: 8px; padding-left: 10px; }
 header #user_bar img 			{ position: absolute; top:6px; left:10px; padding: 2px; border: 1px solid #e1e1e1; }
 
