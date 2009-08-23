@@ -28,7 +28,7 @@
           <header>
             <h2>Current Question</h2>
           </header>
-          <h3 id='current_question'><%= @question.get_question %></h3>
+          <h3 id='current_question'><%= @question.get_question(true) %></h3>
           <% form_remote_tag :url => url_for(:action => 'reply') do -%>
             <fieldset>
               <ul>
