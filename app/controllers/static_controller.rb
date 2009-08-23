@@ -69,6 +69,7 @@ class StaticController < ApplicationController
       
       render :update do |page|
         page.insert_html :bottom, '#flash_wrap', @notice
+        page << %Q{$('#text').val('.@MovieTwitvia ');}
         page.call 'fadeNotice()'
       end
     else
