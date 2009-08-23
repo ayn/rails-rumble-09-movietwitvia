@@ -1,0 +1,53 @@
+require 'scrubyt'
+
+RATINGS = %w( PG PG-13 R )
+
+imdb_data = Scrubyt::Extractor.define do
+  fetch 'http://www.imdb.com/list'
+
+  fill_textfield 'countries','USA'
+  fill_textfield 'certificates', "USA:#{RATINGS[rand(3)]}"
+  select_option 'tv', 'exclude TV series'
+  select_option 'ep', 'exclude TV episodes'
+  select_option 'tvm', 'exclude TV movies'
+  select_option 'vid', 'exclude videos'
+  select_option 'lo-rating', '7'
+  select_option 'year_lo', '1970'
+  select_option 'year_hi', '2010'
+  check_checkbox 'random'
+  
+  submit_and_wait 10, 'SEARCH', 'button'
+  
+  head "/html/head/link[@rel='canonical']" do
+    href "href", :type => :attribute do
+      imdb_id lambda {|x| x.match('(\w)+(?=/$)').to_s }, :type => :script
+    end
+  end
+  
+  movie "//div[@class='maindetails']" do
+    
+    poster "/div[2]/div[1]/a/img" do
+      poster_src "src", :type => :attribute
+    end
+    
+    name "/div[3]/div[1]/h1" do
+      title lambda{|x| x.gsub(/ \(\d+\) More at IMDbPro &raquo;/, '')}, :type => :script
+      year "/span[1]/a[1]"
+    end
+    
+    cast "/div[3]/div[2]//table[@class='cast']" do
+      actors "//tr/td[2]/a", :generalize => true
+    end
+    
+  end.select_indices(:last) # movie
+  
+end
+
+imdb_hash = Hash.new
+imdb_data.to_hash.map{ |i| imdb_hash.merge! i }
+
+puts Question.create( :actors => imdb_hash[:actors].split(',').first(3)*', ',
+                      :imdb_id => imdb_hash[:imdb_id],
+                      :title => imdb_hash[:title], 
+                      :year => imdb_hash[:year].to_i, 
+                      :movie_poster => imdb_hash[:poster_src]).inspect

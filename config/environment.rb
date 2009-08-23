@@ -13,8 +13,8 @@ Rails::Initializer.run do |config|
   #config.gem 'pstuteville-scrubyt', :lib => 'scrubyt', :version => '>= 0.5', :source => 'http://gems.github.com'
   config.gem 'scrubyt', :lib => 'scrubyt', :version => '>=0.5'
   config.gem 'mbbx6spp-twitter4r', :lib => 'twitter', :source => 'http://gems.github.com'  # 
-    # config.gem 'mechanize'
-    # config.gem 'hpricot'
+  config.gem 'mechanize'
+  config.gem 'hpricot'
   
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
