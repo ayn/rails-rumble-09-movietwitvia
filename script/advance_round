@@ -18,7 +18,7 @@ mentions.reverse.each do |m|
 end
 
 if @got_winner || question.updated_at < 30.minutes.ago
-  Rails.cache.write('max_tweet_id_from_last_round', mentions.first['id'])
+  Rails.cache.write('max_tweet_id_from_last_round', mentions.first['id']) unless mentions.empty?
   next_question = Question.find(((rand*(Question.count))+Question.first.id).truncate, :conditions => ['winner_id IS NULL'])
   question.update_attribute(:is_current, false)
   next_question.send_tweet
