@@ -47,24 +47,24 @@ $(function(){
 })
 
 function updateQuestion() {
-    $.ajax({
-      type: "GET",
-      url: "/current_question",
-      dataType: "html",
-      success: function(html) {
-        var currQ = $('#current_question').html();
-        if (html != currQ) {
-          $('#current_question').fadeOut('slow');
-          $('#current_question').html(html);
-          $('#current_question').fadeIn('slow');
-        }
-        setTimeout(function() {
-            updateQuestion();
-          }, 30000
-        );
+  $.ajax({
+    type: "GET",
+    url: "/current_question",
+    dataType: "html",
+    success: function(html) {
+      var currQ = $('#current_question').html();
+      if (html != currQ) {
+        $('#current_question').fadeOut('slow');
+        $('#current_question').html(html);
+        $('#current_question').fadeIn('slow');
       }
-    });
-  }
+      setTimeout(function() {
+        updateQuestion();
+        }, 30000
+      );
+    }
+  });
+}
 </script>
 </body>
 </html>
