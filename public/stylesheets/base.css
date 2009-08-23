@@ -32,13 +32,16 @@ header #user_bar img 			{ position: absolute; top:6px; left:10px; padding: 2px; 
 
 /* CONTENT AREA // SIDEBAR
 ------------------------------*/
-.content 						{ display: table; }
+.content 						{ display: table; margin-bottom: 30px; }
 .body		 					{ display: table-cell; width: 620px; padding-right: 22px; }
 section							{ background-color: #fff; padding: 15px; margin-bottom: 15px; -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 section header					{ margin-bottom: 8px; border-bottom: 1px solid #e1e1e1; }
 aside 							{ display: table-cell; width: 300px; }
+aside section					{ background-color: #e5effb; margin-bottom: 0;  -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px;}
+aside section header			{ border-bottom: 1px solid #b1ccea; margin-top: 50px; }
+aside section header.first		{ margin-top: 0; }
 
-p.sort							{ text-align: right; border-bottom: 1px solid #e1e1e1; padding-bottom: 8px; margin-bottom: 8px; }
+p.sort							{ text-align: right; border-bottom: 1px solid #b1ccea; padding-bottom: 8px; margin-bottom: 8px; }
 p.sort a						{ background-color: #ccc; -moz-border-radius: 4px; -webkit-border-radius: 4px; color: #fff; padding: 3px 5px; }
 p.sort a.current, p.sort a:hover.current	{ background-color: #083d6f;}
 
@@ -105,12 +108,18 @@ ul.tweets li.winner						{ background-color: lightblue; }
 
 /* SIDEBAR
 ------------------------------*/
-aside section						{ margin-bottom: 30px; }
 aside section header h3				{ font-size: 18px; }
 aside section ul 					{ margin: 0; list-style: none; }
 aside section ul li					{ margin-bottom: 8px; }
 aside section ul li a 				{ display: block; text-decoration: none; color: #000; }
 aside section ul li a:hover 		{ text-decoration: underline; }
+
+#twtr-search-widget .twtr-doc .twtr-hd 		{ display: none; }
+#twtr-search-widget .twtr-doc .twtr-ft		{ display: none; }
+
+#twtr-search-widget .twtr-doc .twtr-img		{ margin-left: 0; padding: 2px; height: 48px; width: 48px; float: left; border: 1px solid #e1e1e1; background-color: #fff; }
+#twtr-search-widget .twtr-doc .twtr-tweet-text { padding-left: 68px; }
+
 
 /* PAGINATION 
 ------------------------------*/

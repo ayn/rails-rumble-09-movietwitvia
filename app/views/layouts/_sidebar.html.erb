@@ -1,6 +1,6 @@
 <aside>
   <section>
-    <header>
+    <header class="first">
       <h2>How do I play?</h2>
     </header>
     
@@ -20,9 +20,7 @@
         
         <li>Answer the question and sit tight and find out if you are the winner of the round</li>
       </ol>
-  </section>
-    
-  <section>
+
     <header>
       <h2>The Leaders</h2>
     </header>
@@ -38,15 +36,13 @@
         <li><%= link_to "#{leader.login}", twitter_profile_url(leader) %> <%= leader.winnings.send(User::METHOD_MAP[params[:time_period] || 'all-time']).size %></li>
       <% end %>
     </ol>
-  </section>
-  
-  <section>
+
     <header>
       <h2>Latest Winning Tweets</h2>
     </header>
     <div id="twtr-search-widget"></div>
     <script src="http://widgets.twimg.com/j/1/widget.js"></script>
-    <link href="http://widgets.twimg.com/j/1/widget.css" type="text/css" rel="stylesheet">
+    <!-- <link href="http://widgets.twimg.com/j/1/widget.css" type="text/css" rel="stylesheet"> -->
     <script>
     new TWTR.Widget({
       search: '#MovieTwitvia won from:MovieTwitvia',
@@ -55,16 +51,16 @@
       title: '',
       subject: '',
       width: 270,
-      height: 300,
+      height: 250,
       theme: {
         shell: {
-          background: '#093e70',
-          color: '#fffff'
+          background: '',
+          color: ''
         },
         tweets: {
-          background: '#ffffff',
-          color: '#444444',
-          links: '#1985b5'
+          background: '#E5EFFB',
+          color: '',
+          links: ''
         }
       }
     }).render().start();
