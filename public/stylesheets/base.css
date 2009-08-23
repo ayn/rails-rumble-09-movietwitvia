@@ -38,7 +38,7 @@ section							{ background-color: #fff; padding: 15px; margin-bottom: 15px; -moz
 section header					{ margin-bottom: 8px; border-bottom: 1px solid #e1e1e1; }
 aside 							{ display: table-cell; width: 300px; }
 aside section					{ background-color: #e5effb; margin-bottom: 0;  -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px;}
-aside section header			{ border-bottom: 1px solid #b1ccea; margin-top: 50px; }
+aside section header			{ border-bottom: 1px solid #b1ccea; margin-top: 30px; }
 aside section header.first		{ margin-top: 0; }
 
 p.sort							{ text-align: right; border-bottom: 1px solid #b1ccea; padding-bottom: 8px; margin-bottom: 8px; }
@@ -67,6 +67,8 @@ ul.tweets li .tweet p 					{ background-color: #fff; width: 420px; position: rel
 ul.tweets li .tweet h5 a 				{ color: #444; }
 
 ul.tweets li.winner						{ background-color: lightblue; }
+
+section.contestants img a				{ margin-right: 2px; margin-bottom: 2px; }
 
 /* BUTTONS
 ================================= */
