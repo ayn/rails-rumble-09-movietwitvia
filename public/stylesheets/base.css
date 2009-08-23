@@ -19,6 +19,7 @@ div.notice 						{ background: #cfc; border-color: #191; color: #131; }
 header.brand					{ position: relative; height: 55px; margin-bottom: 15px; }
 header.brand h1					{ margin: 0 0 10px 0; padding: 0; position: relative; }
 header.brand h1	span			{ color: #fff; display: block; font-size: 14px; position: absolute; left: 60px; bottom: -1px; }
+header.brand h1 span a			{ color: #fff; padding: 5px 8px 3px; position: absolute; right: -35px; top: -30px; background-color: #00A513; -moz-border-radius: 5px; -webkit-border-radius: 5px;}
 header.brand h1 a.logo			{ height: 50px; position: relative; margin: 0; padding: 0 0 0 58px; display: inline-block; font-weight: bold; color: #fff; background: transparent url("../images/avatar.png") no-repeat top left; }
 
 header #user_bar				{ position: absolute; right: 0; top: 0; }
