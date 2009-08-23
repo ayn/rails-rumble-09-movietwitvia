@@ -21,7 +21,7 @@
 
     <div class="content">
       <div class="body">
-        <section>
+        <section id='question'>
           <header>
             <h2>Current Question</h2>
           </header>
@@ -57,6 +57,7 @@ function updateQuestion() {
         $('#current_question').fadeOut('slow');
         $('#current_question').html(html);
         $('#current_question').fadeIn('slow');
+        $('section#question').effect("highlight", {}, 3000);
       }
       setTimeout(function() {
         updateQuestion();
