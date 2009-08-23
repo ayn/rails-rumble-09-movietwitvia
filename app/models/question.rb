@@ -23,7 +23,9 @@ class Question < ActiveRecord::Base
   
   def tweet_winner(screen_name)
     setup_twitter
-    @twitter.status(:post, "The winner is @#{screen_name}.")
+    name = title[0..59]
+    s = "#MovieTwitvia #RailsRumble @#{screen_name} won! The movie was #{name}. http://www.amazon.com/s/?url=search-alias=aps&field-keywords=#{title}&tag=carmudgeonsco-20&link_code=wql&camp=212361&creative=380601&_encoding=UTF-8"
+    @twitter.status(:post, s)
   end
   
   def finalize(twuser_id)
