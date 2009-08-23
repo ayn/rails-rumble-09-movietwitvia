@@ -1,0 +1,154 @@
+--- !ruby/object:Gem::Specification 
+name: scrubyt
+version: !ruby/object:Gem::Version 
+  version: 0.5.0
+platform: ruby
+authors: 
+- Peter Szinek
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-08-23 00:00:00 -05:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: hpricot
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: "0.5"
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: mechanize
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 0.6.3
+    version: 
+description: scRUBYt! is an easy to learn and use, yet powerful and effective web scraping framework. It's most interesting part is a Web-scraping DSL built on HPricot and WWW::Mechanize, which allows to navigate to the page of interest, then extract and query data records with a few lines of code. It is hard to describe scRUBYt! in a few sentences - you have to see it for yourself!
+email: peter@rubyrailways.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README.rdoc
+files: 
+- CHANGELOG
+- COPYING
+- README.rdoc
+- Rakefile
+- VERSION
+- lib/scrubyt.rb
+- lib/scrubyt/core/navigation/agents/firewatir.rb
+- lib/scrubyt/core/navigation/agents/mechanize.rb
+- lib/scrubyt/core/navigation/fetch_action.rb
+- lib/scrubyt/core/navigation/navigation_actions.rb
+- lib/scrubyt/core/scraping/compound_example.rb
+- lib/scrubyt/core/scraping/constraint.rb
+- lib/scrubyt/core/scraping/constraint_adder.rb
+- lib/scrubyt/core/scraping/filters/attribute_filter.rb
+- lib/scrubyt/core/scraping/filters/base_filter.rb
+- lib/scrubyt/core/scraping/filters/constant_filter.rb
+- lib/scrubyt/core/scraping/filters/detail_page_filter.rb
+- lib/scrubyt/core/scraping/filters/download_filter.rb
+- lib/scrubyt/core/scraping/filters/html_subtree_filter.rb
+- lib/scrubyt/core/scraping/filters/regexp_filter.rb
+- lib/scrubyt/core/scraping/filters/script_filter.rb
+- lib/scrubyt/core/scraping/filters/text_filter.rb
+- lib/scrubyt/core/scraping/filters/tree_filter.rb
+- lib/scrubyt/core/scraping/pattern.rb
+- lib/scrubyt/core/scraping/pre_filter_document.rb
+- lib/scrubyt/core/scraping/result_indexer.rb
+- lib/scrubyt/core/shared/extractor.rb
+- lib/scrubyt/logging.rb
+- lib/scrubyt/output/post_processor.rb
+- lib/scrubyt/output/result.rb
+- lib/scrubyt/output/result_dumper.rb
+- lib/scrubyt/output/result_node.rb
+- lib/scrubyt/output/scrubyt_result.rb
+- lib/scrubyt/utils/compound_example_lookup.rb
+- lib/scrubyt/utils/ruby_extensions.rb
+- lib/scrubyt/utils/shared_utils.rb
+- lib/scrubyt/utils/simple_example_lookup.rb
+- lib/scrubyt/utils/xpathutils.rb
+- test/blackbox_test.rb
+- test/blackbox_tests/basic/multi_root.expected.xml
+- test/blackbox_tests/basic/multi_root.rb
+- test/blackbox_tests/basic/simple.expected.xml
+- test/blackbox_tests/basic/simple.rb
+- test/blackbox_tests/basic/three_divs.html
+- test/blackbox_tests/detail_page/detail_page_1.html
+- test/blackbox_tests/detail_page/detail_page_2.html
+- test/blackbox_tests/detail_page/main_page_1.html
+- test/blackbox_tests/detail_page/main_page_2.html
+- test/blackbox_tests/detail_page/one_detail_page.expected.xml
+- test/blackbox_tests/detail_page/one_detail_page.rb
+- test/blackbox_tests/detail_page/two_detail_pages.expected.xml
+- test/blackbox_tests/detail_page/two_detail_pages.rb
+- test/blackbox_tests/next_page/next_page_link.expected.xml
+- test/blackbox_tests/next_page/next_page_link.rb
+- test/blackbox_tests/next_page/page_1.html
+- test/blackbox_tests/next_page/page_2.html
+- test/blackbox_tests/next_page/page_3.html
+- test/blackbox_tests/next_page/page_list_links.expected.xml
+- test/blackbox_tests/next_page/page_list_links.rb
+- test/blackbox_tests/next_page/page_list_links.tofix
+has_rdoc: true
+homepage: http://www.scrubyt.org
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.5
+signing_key: 
+specification_version: 3
+summary: A powerful Web-scraping framework built on Mechanize and Hpricot (and FireWatir)
+test_files: 
+- test/blackbox_test.rb
+- test/blackbox_tests/basic/multi_root.expected.xml
+- test/blackbox_tests/basic/multi_root.rb
+- test/blackbox_tests/basic/simple.expected.xml
+- test/blackbox_tests/basic/simple.rb
+- test/blackbox_tests/basic/three_divs.html
+- test/blackbox_tests/detail_page/detail_page_1.html
+- test/blackbox_tests/detail_page/detail_page_2.html
+- test/blackbox_tests/detail_page/main_page_1.html
+- test/blackbox_tests/detail_page/main_page_2.html
+- test/blackbox_tests/detail_page/one_detail_page.expected.xml
+- test/blackbox_tests/detail_page/one_detail_page.rb
+- test/blackbox_tests/detail_page/two_detail_pages.expected.xml
+- test/blackbox_tests/detail_page/two_detail_pages.rb
+- test/blackbox_tests/next_page/next_page_link.expected.xml
+- test/blackbox_tests/next_page/next_page_link.rb
+- test/blackbox_tests/next_page/page_1.html
+- test/blackbox_tests/next_page/page_2.html
+- test/blackbox_tests/next_page/page_3.html
+- test/blackbox_tests/next_page/page_list_links.expected.xml
+- test/blackbox_tests/next_page/page_list_links.rb
+- test/blackbox_tests/next_page/page_list_links.tofix

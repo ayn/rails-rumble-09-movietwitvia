@@ -10,8 +10,11 @@ Rails::Initializer.run do |config|
   config.gem 'twitter-auth', :lib => 'twitter_auth'
   config.gem 'oauth', :version => '>= 0.3.1'
   config.gem 'haml', :version => '>= 2.0.6'
-  config.gem 'porras-imdb', :lib => 'imdb', :source => 'http://gems.github.com'
-  config.gem 'mbbx6spp-twitter4r', :lib => 'twitter', :source => 'http://gems.github.com'
+  #config.gem 'pstuteville-scrubyt', :lib => 'scrubyt', :version => '>= 0.5', :source => 'http://gems.github.com'
+  config.gem 'scrubyt', :lib => 'scrubyt', :version => '>=0.5'
+  config.gem 'mbbx6spp-twitter4r', :lib => 'twitter', :source => 'http://gems.github.com'  # 
+    # config.gem 'mechanize'
+    # config.gem 'hpricot'
   
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
