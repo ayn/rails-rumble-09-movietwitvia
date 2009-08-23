@@ -69,8 +69,7 @@ class StaticController < ApplicationController
       
       render :update do |page|
         page.insert_html :bottom, '#flash_wrap', @notice
-        page << %Q{$('#text').val('.@MovieTwitvia ');}
-        page.call 'fadeNotice()'
+        page << %Q{$('#text').val('.@MovieTwitvia '); fadeNotice();}
       end
     else
       session[:text], session[:in_reply_to_status_id] = params[:text], params[:in_reply_to_status_id]
