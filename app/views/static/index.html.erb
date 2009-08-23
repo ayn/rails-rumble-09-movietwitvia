@@ -7,51 +7,8 @@
 	<header>
 		<h2>The Answers</h2>
 	</header>
-	<ul class="hfeed tweets">
-	  <li class="hentry clear first">
-	    <div class="thumb">
-	      	<img src="http://a1.twimg.com/profile_images/14716872/dm_normal.jpg" alt="Doug March (@Marchdoe)" />
-	    </div>
-	    <div class="tweet">
-			<p>@MovieTwitvia Lorem Ipsum Dollar <span class="ft">&nbsp;</span></p>
-	      <span class="author vcard">
-	        <a class="fn url" href="http://twitter.com/marchdoe">Doug March</a>
-	        <a href="#" class="date">
-	          <abbr class="published" title="timestamp goes here">answered 5 seconds ago</abbr>
-	        </a>
-	      </span>
-	    </div>
-	  </li>
-	
-	  <li class="hentry clear winner">
-	    <div class="thumb">
-	      	<img src="http://a1.twimg.com/profile_images/14716872/dm_normal.jpg" alt="Doug March (@Marchdoe)" />
-	    </div>
-	    <div class="tweet">
-		<p>@MovieTwitvia Lorem Ipsum Dollar Lorem Ipsum Lorem Ipsum<span class="ft">&nbsp;</span></p>
-	      <span class="author vcard">
-	        <a class="fn url" href="http://twitter.com/marchdoe">Doug March</a>
-	        <a href="#" class="date">
-	          <abbr class="published" title="timestamp goes here">answered 5 seconds ago</abbr>
-	        </a>
-	      </span>
-	    </div>
-	  </li>
-	
-	  <li class="hentry clear">
-	    <div class="thumb">
-	      	<img src="http://a1.twimg.com/profile_images/14716872/dm_normal.jpg" alt="Doug March (@Marchdoe)" />
-	    </div>
-	    <div class="tweet">
-		<p>@MovieTwitvia Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit pellentesque orci, vitae pellentesque nulla congue tempor. Donec lobortis eleifend ligula vitae aliquet. <span class="ft">&nbsp;</span></p>
-	      <span class="author vcard">
-	        <a class="fn url" href="http://twitter.com/marchdoe">Doug March</a>
-	        <a href="#" class="date">
-	          <abbr class="published" title="timestamp goes here">answered 5 seconds ago</abbr>
-	        </a>
-	      </span>
-	    </div>
-	  </li>
+	<ul id="mentions" class="hfeed tweets">
+	  <p id='loading_mentions'>Loading Twitter mentions...</p>
 	</ul>
 </section>
 
@@ -67,3 +24,25 @@
 
 
 
+<script type="text/javascript">
+$(function(){
+  loadMentions();
+});
+
+function loadMentions() {
+  $.ajax({
+    type: "GET",
+    url: "/mentions",
+    dataType: "html",
+    success: function(html) {
+      $('#loading_mentions').fadeOut('slow');
+      $('#mentions').prepend(html);
+      if ($('#mentions .tweet p')) last_tweet_id = $('#mentions .tweet p')[0].id;
+      setTimeout(function() {
+          loadMentions();
+        }, 600000
+      );
+    }
+  });
+}
+</script>

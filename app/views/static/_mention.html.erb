@@ -1,0 +1,14 @@
+<li class="hentry clear">
+  <div class="thumb">
+    <img src="<%= mention['user']['profile_image_url'] -%>" />
+  </div>
+  <div class="tweet">
+    <p id='<%= mention['id'] -%>'><%= mention['text'] -%><span class="ft">&nbsp;</span></p>
+    <span class="author vcard">
+      <a class="fn url" href="http://twitter.com/<%= mention['user']['screen_name'] -%>"><%= mention['user']['screen_name'] -%></a>
+      <a href="#" class="date">
+        <abbr class="published" title="timestamp goes here">answered <%= time_ago_in_words(Time.parse(mention['created_at']), true) -%> ago</abbr>
+      </a>
+    </span>
+  </div>
+</li>
