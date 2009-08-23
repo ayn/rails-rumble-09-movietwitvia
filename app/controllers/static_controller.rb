@@ -5,6 +5,11 @@ class StaticController < ApplicationController
     @leaders = User.leaderboard(params[:time_period] || 'all-time') 
     @question = Question.next_random_question
   end
+  
+  def current_question
+    @question = Question.next_random_question
+    render :text => @question.get_question
+  end
 
   def mentions
     all_mentions = Rails.cache.fetch("all_mentions", :expires_in => 30.seconds) do
