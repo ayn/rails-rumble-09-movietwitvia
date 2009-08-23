@@ -1,21 +1,11 @@
-<section>
+<section id="answers">
 	<header>
-		<h2>The Answers</h2>
+		<h2>Who Has The Answer?</h2>
 	</header>
 	<ul id="mentions" class="hfeed tweets">
 	  <p id='loading_mentions'>Loading Twitter mentions...</p>
 	</ul>
 </section>
-
-
-<% if @users.any? %>
-<section class="contestants">
-  <header><h2>The Contestants</h2></header>
-  <% for user in @users %>
-    <%= link_to profile_image(user), twitter_profile_url(user), :target => "_blank" %>
-  <% end %>
-</section>
-<% end %>
 
 <script type="text/javascript">
 $(function(){
