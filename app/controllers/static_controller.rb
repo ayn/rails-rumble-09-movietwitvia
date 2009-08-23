@@ -4,6 +4,10 @@ class StaticController < ApplicationController
     @users = User.all(:order => "created_at DESC", :limit => 16)
     @leaders = User.leaderboard(params[:time_period] || 'all-time') 
     @question = Question.next_random_question
+    @text = session[:text]
+    @in_reply_to_status_id = session[:in_reply_to_status_id]
+    flash.now[:notice] = "Thanks for logging in, please send your answer again!" if @text && @in_reply_to_status_id
+    session[:text] = session[:in_reply_to_status_id] = nil
   end
   
   def current_question
@@ -51,5 +55,28 @@ class StaticController < ApplicationController
   def reset_session
     session[:browser_since_id] = nil
     render :text => 'session reset'
+  end
+  
+  def reply
+    if current_user
+      if params[:text] && params[:in_reply_to_status_id]
+        current_user.twitter.post('/statuses/update.json', 'status' => params[:text], 'in_reply_to_status_id' => params[:in_reply_to_status_id])
+        @notice = %Q{<div class='flash notice'>Answer tweeted! Thank you!</div>}
+        session[:text], session[:in_reply_to_status_id] = nil
+      else
+        @notice = %Q{<div class='flash error'>Sorry,there was a problem tweeting your answer, please try again!</div>}
+      end
+      
+      render :update do |page|
+        page.insert_html :bottom, '#flash_wrap', @notice
+        page.call 'fadeNotice()'
+      end
+    else
+      session[:text], session[:in_reply_to_status_id] = params[:text], params[:in_reply_to_status_id]
+      
+      render :update do |page|
+        page.redirect_to(:action => 'login')
+      end
+    end
   end
 end

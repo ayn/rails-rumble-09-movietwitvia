@@ -13,13 +13,14 @@
 <body>
   <div class="container">
     <%= render "layouts/brand" %>
-
-    <% if flash[:error] %>
-    <div class='flash error'><%= flash[:error] %></div>
-    <% end %>
-	<% if flash[:notice] %>
-    <div class='flash notice'><%= flash[:notice] %></div>
-    <% end %>
+    <div id='flash_wrap'>
+      <% if flash[:error] %>
+        <div class='flash error'><%= flash[:error] %></div>
+      <% end %>
+      <% if flash[:notice] %>
+        <div class='flash notice'><%= flash[:notice] %></div>
+      <% end %>
+    </div>
 
     <div class="content">
       <div class="body">
@@ -28,19 +29,19 @@
             <h2>Current Question</h2>
           </header>
           <h3 id='current_question'><%= @question.get_question %></h3>
+          <% form_remote_tag :url => url_for(:action => 'reply') do -%>
+            <fieldset>
+              <ul>
+                <li>
+                  <label class="doing" for="status">Your Answer</label>
+                  <%= text_area_tag 'text', @text || '.@MovieTwitvia ' -%>
+                  <%= hidden_field_tag 'in_reply_to_status_id', @in_reply_to_status_id || @question.tweet_id -%>
+                  <input type="submit" class="status-btn round-btn disabled" id="update-submit" value="update" name="update" />
+                </li>
+              </ul>
+            </fieldset>
+          <% end -%>
 
-		<form>
-		  <fieldset>
-		    <ul>
-		      <li>
-				<label class="doing" for="status">Your Answer</label>
-			     <textarea></textarea>
-			     <input type="submit" class="status-btn round-btn disabled" id="update-submit" value="update" name="update" />
-				</li>
-			</ul>
-		  </fieldset>
-		</form>
-		
         </section>
 
         <%= yield %>
@@ -54,13 +55,16 @@
 
 <script type="text/javascript">
 $(function(){
+  fadeNotice();
+  updateQuestion();
+})
+
+function fadeNotice() {
   setTimeout(function() {
     if ($('.flash.notice')) $('.flash.notice').slideUp('slow');
     }, 5000
   );
-  updateQuestion();
-})
-
+}
 function updateQuestion() {
   $.ajax({
     type: "GET",
