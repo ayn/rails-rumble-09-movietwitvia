@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
   def index
+    @title = 'Play Movie Trivia on Twitter!'
     @users = User.all(:order => "created_at DESC", :limit => 16)
     @leaders = User.leaderboard(params[:time_period] || 'all-time') 
     @question = Question.next_random_question
