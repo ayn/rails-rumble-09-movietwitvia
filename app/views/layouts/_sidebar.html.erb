@@ -1,24 +1,28 @@
 <aside>
   <section>
-    <header>
+    <header class="first">
       <h2>How do I play?</h2>
     </header>
     
-      <ul>
-        <li>
-          #1 <%= link_to image_tag("http://static.twitter.com/images/business/follow/follow_twitter_button_d.png", :alt => "Follow us on Twitter"), "http://twitter.com/MovieTwitvia", :title => "Follow us on Twitter" %>
+      <ol class="steps">
+        <li class="step1">
+          <p><%= link_to "Associate", '/login' %> your Twitter account</p>
+        </li>
+
+        <li class="step2">
+          <%= link_to image_tag("http://static.twitter.com/images/business/follow/follow_twitter_button_d.png", :alt => "Follow us on Twitter"), "http://twitter.com/MovieTwitvia", :title => "Follow us on Twitter" %>
         </li>
         
-        <li>
-          #2 Answer the question
-          example goes here
+        <li class="step3">
+          <p>@MovieTwitvia will send you a question 
+			<span>"What movie did Woody Allen, Diane Keaton, and Tony Roberts star in 1977?"</span></p>
+		  <p>Send us the answer
+          	<span>"@MovieTwitvia is it Annie Hall?"</span></p>
         </li>
         
-        <li>#3 sit tight and find out if you are the winner of the round</li>
-      </ul>
-  </section>
-    
-  <section>
+        <li class="step4"><p>Sit tight and find out if you are the winner of the round and get ready for the next question</p></li>
+      </ol>
+
     <header>
       <h2>The Leaders</h2>
     </header>
@@ -34,5 +38,34 @@
         <li><%= link_to "#{leader.login}", twitter_profile_url(leader) %> <%= leader.winnings.send(User::METHOD_MAP[params[:time_period] || 'all-time']).size %></li>
       <% end %>
     </ol>
+
+    <header>
+      <h2>Past Winning Tweets</h2>
+    </header>
+    <div id="twtr-search-widget"></div>
+    <script src="http://widgets.twimg.com/j/1/widget.js"></script>
+    <!-- <link href="http://widgets.twimg.com/j/1/widget.css" type="text/css" rel="stylesheet"> -->
+    <script>
+    new TWTR.Widget({
+      search: 'from:MovieTwitvia won',
+      id: 'twtr-search-widget',
+      loop: true,
+      title: '',
+      subject: '',
+      width: 270,
+      height: 100,
+      theme: {
+        shell: {
+          background: '',
+          color: ''
+        },
+        tweets: {
+          background: '#E5EFFB',
+          color: '',
+          links: '#007195'
+        }
+      }
+    }).render().start();
+    </script>
   </section>
 </aside>

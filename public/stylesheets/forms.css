@@ -1,0 +1,18 @@
+/* --------------------------------------------------------------
+FORMS
+-------------------------------------------------------------- */
+.container form { display: block; position: relative; border-top: 1px solid #e1e1e1; padding-top: 10px; margin-top: 10px; }
+.container form ul { list-style-type: none; margin: 0; padding: 0; }
+.container form ul li { list-style-type: none; margin: 0 0 1em 0; }
+.container form ul li.submit { margin-top: 1em; text-align: right; }
+ 
+/* ------------ Label --------------- */
+form label { display:block; text-align:left; cursor:hand; }
+ 
+/* ------------ fieldset legend --------------- */
+fieldset { margin: 0; }
+ 
+/* ------------ Textarea Input Select --------------- */
+textarea		{ width: 579px; padding:5px 4px; margin-bottom: 5px; }
+/*textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="file"]:focus {  }*/
+input[type="submit"] { float: right; }

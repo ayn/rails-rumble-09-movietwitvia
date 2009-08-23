@@ -9,7 +9,7 @@
 
 
 <% if @users.any? %>
-<section>
+<section class="contestants">
   <header><h2>The Contestants</h2></header>
   <% for user in @users %>
     <%= link_to profile_image(user), twitter_profile_url(user), :target => "_blank" %>
@@ -32,8 +32,9 @@ function loadMentions() {
     success: function(html) {
       $('#loading_mentions').fadeOut('slow');
       $('#mentions').prepend(html);
-      $('.new_mentions').slideDown("slow").removeClass('new_mentions');
+      $('.new_mentions').slideDown("slow");
       if ($('#mentions .tweet p')) {
+        linkize();
         last_tweet_id = $('#mentions .tweet p:first').id;
         new_page_load = 0;
       }
@@ -43,5 +44,18 @@ function loadMentions() {
       );
     }
   });
+}
+
+function linkize() {
+  tweets = $('.new_mentions .tweet p');
+  for (var i = 0 ; i != tweets.length ; i++) {
+    text = tweets[i].innerHTML.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
+      return '<a target="_blank" href="'+url+'">'+url+'</a>';
+    }).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
+      return  reply.charAt(0)+'<a target="_blank" href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
+    });
+    tweets[i].innerHTML = text;
+  }
+  $('.new_mentions').removeClass('new_mentions');
 }
 </script>

@@ -10,34 +10,38 @@ body 							{ background-color: transparent; margin: 0 auto; padding: 22px 0; wi
 /* WIDELY USED CLASSES */
 .clear 							{ clear: both; }
 
-div.flash 						{ padding: 4px 8px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; border: 2px solid #ccc; margin: 10px 0; }
+div.flash 						{ padding: 8px 12px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; border: 2px solid #ccc; margin: 10px 0; }
 div.error 						{ background: #fcc; border-color: #911; color: #311; }
 div.notice 						{ background: #cfc; border-color: #191; color: #131; }
 
 /* HEADER
 ================================= */
-header.brand					{ position: relative; height: 75px; margin-bottom: 20px; }
-header.brand h1					{ margin: 0 0 10px 0; padding: 0; border: none; }
-header.brand h1 a.logo			{ position: relative; margin: 0; padding: 0; display: inline-block; font-weight: bold; color: #fff; }
+header.brand					{ position: relative; height: 55px; margin-bottom: 15px; }
+header.brand h1					{ margin: 0 0 10px 0; padding: 0; position: relative; }
+header.brand h1	span			{ color: #fff; display: block; font-size: 14px; position: absolute; left: 60px; bottom: 0; }
+header.brand h1 a.logo			{ height: 50px; position: relative; margin: 0; padding: 0 0 0 58px; display: inline-block; font-weight: bold; color: #fff; background: transparent url("../images/avatar.png") no-repeat top left; }
 
 header #user_bar				{ position: absolute; right: 0; top: 0; }
 header #user_bar a.login		{ background: transparent url("../images/sign-in-with-twitter.png") no-repeat top left; width: 151px; height: 24px; display: block; text-indent: -9999px; }
 
 header #user_bar				{ background-color: #fff;  -moz-border-radius: 4px; -webkit-border-radius: 4px; padding: 4px 8px; }
-header #user_bar p 				{ margin: 0 0 0 30px; padding: 8px 10px; }
+header #user_bar p 				{ margin: 0 0 0 30px; padding: 8px 10px; min-width: 235px; }
 header #user_bar p a			{ border-left: 1px solid #ccc; margin-left: 8px; padding-left: 10px; }
 header #user_bar img 			{ position: absolute; top:6px; left:10px; padding: 2px; border: 1px solid #e1e1e1; }
 
 
 /* CONTENT AREA // SIDEBAR
 ------------------------------*/
-.content 						{ display: table; }
+.content 						{ display: table; margin-bottom: 30px; }
 .body		 					{ display: table-cell; width: 620px; padding-right: 22px; }
 section							{ background-color: #fff; padding: 15px; margin-bottom: 15px; -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 section header					{ margin-bottom: 8px; border-bottom: 1px solid #e1e1e1; }
 aside 							{ display: table-cell; width: 300px; }
+aside section					{ background-color: #e5effb; margin-bottom: 0;  -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px;}
+aside section header			{ border-bottom: 1px solid #b1ccea; margin-top: 30px; }
+aside section header.first		{ margin-top: 0; }
 
-p.sort							{ text-align: right; border-bottom: 1px solid #e1e1e1; padding-bottom: 8px; margin-bottom: 8px; }
+p.sort							{ text-align: right; border-bottom: 1px solid #b1ccea; padding-bottom: 8px; margin-bottom: 8px; }
 p.sort a						{ background-color: #ccc; -moz-border-radius: 4px; -webkit-border-radius: 4px; color: #fff; padding: 3px 5px; }
 p.sort a.current, p.sort a:hover.current	{ background-color: #083d6f;}
 
@@ -46,7 +50,7 @@ p.sort a.current, p.sort a:hover.current	{ background-color: #083d6f;}
 ul.tweets 								{ position: relative; z-index: 3; margin: 0 0 15px 0; list-style: none; }
 ul.tweets li 							{ padding: 15px 0; border-bottom: 1px solid #e1e1e1; display: inline-block; }
 ul.tweets li.first						{ padding: 0 0 15px 0; }
-ul.tweets li .thumb 					{ margin-left: 10px; padding: 2px; height: 50px; width: 50px; float: left; border: 1px solid #e1e1e1; background-color: #fff; }
+ul.tweets li .thumb 					{ margin-left: 10px; padding: 2px; height: 48px; width: 48px; float: left; border: 1px solid #e1e1e1; background-color: #fff; }
 ul.tweets li .thumb a img 				{ height: 48px; width: 48px; }
 ul.tweets li .tweet 					{ padding-left: 75px; }
 ul.tweets li .tweet h2 					{ line-height: 20px; margin-bottom: 5px; }
@@ -63,6 +67,8 @@ ul.tweets li .tweet p 					{ background-color: #fff; width: 420px; position: rel
 ul.tweets li .tweet h5 a 				{ color: #444; }
 
 ul.tweets li.winner						{ background-color: lightblue; }
+
+section.contestants img a				{ margin-right: 2px; margin-bottom: 2px; }
 
 /* BUTTONS
 ================================= */
@@ -104,12 +110,31 @@ ul.tweets li.winner						{ background-color: lightblue; }
 
 /* SIDEBAR
 ------------------------------*/
-aside section						{ margin-bottom: 30px; }
 aside section header h3				{ font-size: 18px; }
 aside section ul 					{ margin: 0; list-style: none; }
 aside section ul li					{ margin-bottom: 8px; }
 aside section ul li a 				{ display: block; text-decoration: none; color: #000; }
 aside section ul li a:hover 		{ text-decoration: underline; }
+
+#twtr-search-widget .twtr-doc .twtr-hd,
+#twtr-search-widget .twtr-doc .twtr-ft,
+#twtr-search-widget .twtr-doc .twtr-hashtag,
+#twtr-search-widget .twtr-doc .twtr-user,
+#twtr-search-widget .twtr-doc .twtr-tweet-text i a.twtr-reply		{ display: none; } 
+
+#twtr-search-widget .twtr-doc .twtr-tweet-text i		{ display: block;}
+#twtr-search-widget .twtr-doc .twtr-tweet-text i a	{ color: #8B8A8A; font-size:9px; text-decoration:none; text-transform: lowercase; }
+#twtr-search-widget .twtr-doc .twtr-img		{ margin-left: 0; padding: 2px; height: 48px; width: 48px; float: left; border: 1px solid #e1e1e1; background-color: #fff; }
+#twtr-search-widget .twtr-doc .twtr-tweet-text { padding-left: 68px; }
+
+ol.steps 							{ list-style: none; margin: 0; }
+ol.steps li							{ margin-bottom: 10px; padding: 4px 0 0px 35px; border-bottom: 1px dashed #b7d1ee; }
+ol.steps li p						{ font-weight: bold; font-size: 12px; }
+ol.steps li p span					{ display: block; margin-bottom: 0; font-size: 12px; font-weight: normal; }
+ol.steps li.step1					{ background: transparent url("../images/step1.png") no-repeat 0 0; }
+ol.steps li.step2					{ background: transparent url("../images/step2.png") no-repeat 0 3px; padding-top: 0; padding-bottom: 7px; }
+ol.steps li.step3					{ background: transparent url("../images/step3.png") no-repeat 0 0; }
+ol.steps li.step4					{ background: transparent url("../images/step4.png") no-repeat 0 0; padding-top: 0; }
 
 /* PAGINATION 
 ------------------------------*/
@@ -132,7 +157,8 @@ footer section						{ padding-top: 2px; padding-bottom: 2px;}
 
 
 .hidden { display:none; }
-
+.credits { font-size:.8em; }
+.credits a { font-weight:bold; }
 
 
 

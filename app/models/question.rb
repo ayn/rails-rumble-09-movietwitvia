@@ -14,7 +14,7 @@ class Question < ActiveRecord::Base
   end
   
   def get_question
-    %Q{What movie did #{actors.split(/, /).to_sentence} star in #{year}?}
+    %Q{What movie did #{actors.split(/, /).to_sentence} star in #{year}? #MovieTwitvia #RailsRumble}
   end
   
   def match_title(text)
@@ -23,13 +23,16 @@ class Question < ActiveRecord::Base
   
   def tweet_winner(screen_name)
     setup_twitter
-    @twitter.status(:post, "The winner is @#{screen_name}.")
+    name = title[0..59]
+    s = "#MovieTwitvia #RailsRumble @#{screen_name} won! The movie was #{name}. http://www.amazon.com/s/?url=search-alias=aps&field-keywords=#{URI.encode(title)}&tag=carmudgeonsco-20&link_code=wql&camp=212361&creative=380601&_encoding=UTF-8"
+    @twitter.status(:post, s)
   end
   
   def finalize(twuser_id)
-    u = User.find_by_twitter_id(twuser_id)
-    self.update_attribute(:winner_id, u.id)
-    u.update_attribute(:wins_count, u.wins_count.to_i + 1)
+    if u = User.find_by_twitter_id(twuser_id)
+      self.update_attribute(:winner_id, u.id)
+      u.update_attribute(:wins_count, u.wins_count.to_i + 1)
+    end
   end
   
   def self.next_random_question

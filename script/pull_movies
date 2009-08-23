@@ -1,14 +1,3 @@
-# @top_250_id = []
-# infile = RAILS_ROOT + '/public/top_250.txt'
-# doc = Hpricot(open(infile))
-# doc.search("a").each do |e|
-#   if e.to_s.match(/\/title\/tt(.*)\/"/)
-#     movie = ImdbMovie.new($1, e.inner_html)
-#     puts Question.create(:actors => movie.cast_members.first(3)*', ', :imdb_id => $1.to_i, :title => movie.title, :year => movie.year, :movie_poster => movie.poster).inspect
-#   end
-# end
-
-#require 'rubygems'
 require 'scrubyt'
 
 RATINGS = %w( PG PG-13 R )
