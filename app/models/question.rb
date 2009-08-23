@@ -5,6 +5,7 @@ class Question < ActiveRecord::Base
 
   named_scope :weekly, :conditions => ['updated_at > ?', 1.week.ago]
   named_scope :daily, :conditions => ['updated_at > ?', 1.day.ago]
+  named_scope :all_time
   
   def send_tweet
     setup_twitter
