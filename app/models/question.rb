@@ -29,9 +29,10 @@ class Question < ActiveRecord::Base
   end
   
   def finalize(twuser_id)
-    u = User.find_by_twitter_id(twuser_id)
-    self.update_attribute(:winner_id, u.id)
-    u.update_attribute(:wins_count, u.wins_count.to_i + 1)
+    if u = User.find_by_twitter_id(twuser_id)
+      self.update_attribute(:winner_id, u.id)
+      u.update_attribute(:wins_count, u.wins_count.to_i + 1)
+    end
   end
   
   def self.next_random_question
