@@ -34,6 +34,7 @@ function loadMentions() {
       $('#mentions').prepend(html);
       $('.new_mentions').slideDown("slow").removeClass('new_mentions');
       if ($('#mentions .tweet p')) {
+        linkize();
         last_tweet_id = $('#mentions .tweet p:first').id;
         new_page_load = 0;
       }
@@ -43,5 +44,17 @@ function loadMentions() {
       );
     }
   });
+}
+
+function linkize() {
+  tweets = $('#mentions .tweet p');
+  for (var i = 0 ; i != tweets.length ; i++) {
+    text = tweets[i].innerHTML.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
+      return '<a target="_blank" href="'+url+'">'+url+'</a>';
+    }).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
+      return  reply.charAt(0)+'<a target="_blank" href="http://www.twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
+    });
+    tweets[i].innerHTML = text;
+  }
 }
 </script>
