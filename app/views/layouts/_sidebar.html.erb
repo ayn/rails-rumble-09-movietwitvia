@@ -36,10 +36,18 @@
 
     
     <ol class="leaders">
-      <% @leaders.each do |leader| %>
+      <%- @leaders.each do |leader| -%>
         <li><span><%= leader.winnings.send(User::METHOD_MAP[params[:time_period] || 'all-time']).size %></span> <%= link_to "#{leader.login}", twitter_profile_url(leader) %> </li>
-      <% end %>
+      <%- end -%>
     </ol>
+
+	<ol class="leaders">
+
+	        <li><span><em>3</em> points</span> <a href="http://twitter.com/ayn">ayn</a> </li>
+
+	        <li><span><em>2</em> points</span> <a href="http://twitter.com/rayvinly">rayvinly</a> </li>
+
+	  </ol>
 
     <header>
       <h2>Past Winning Tweets</h2>
