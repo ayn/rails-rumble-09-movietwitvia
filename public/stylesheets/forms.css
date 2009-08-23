@@ -7,12 +7,12 @@ FORMS
 .container form ul li.submit { margin-top: 1em; text-align: right; }
  
 /* ------------ Label --------------- */
-form label { display:block; text-align:left; cursor:hand; }
+form label { font-size: 16px; display:block; text-align:left; cursor:hand; }
  
 /* ------------ fieldset legend --------------- */
 fieldset { margin: 0; }
  
 /* ------------ Textarea Input Select --------------- */
-textarea		{ width: 558px; padding:5px 4px; margin-bottom: 5px; }
-/*textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="file"]:focus {  }*/
-input[type="submit"] { float: right; }
+textarea		{ width: 558px; padding:5px 4px; margin-bottom: 5px; font: 1.5em  Helvetica, "Helvetica Neue", Arial, sans-serif; color: #666;}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="file"]:focus { color: #363636; }
+input[type="submit"] { float: right; margin-top: 5px; }
