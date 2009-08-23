@@ -25,13 +25,13 @@
     
     <p class="sort">
       <%= link_to '24 hours', static_path(:time_period => '24-hours'), :class => "#{'current' if params[:time_period] == '24-hours'}" -%>
-      <%= link_to 'week', static_path(:time_period => 'last-week'), :class => "#{'current' if params[:time_period] == 'last-week'}" -%>
-      <%= link_to 'all time', static_path, :class => "#{'current' if params[:time_period] == 'all time' || params[:time_period].nil?}" -%>
+      <%= link_to 'this week', static_path(:time_period => 'last-week'), :class => "#{'current' if params[:time_period] == 'last-week'}" -%>
+      <%= link_to 'all time', static_path, :class => "#{'current' if params[:time_period] == 'all-time' || params[:time_period].nil?}" -%>
     </p>
     
     <ol>
       <% @leaders.each do |leader| %>
-        <li><%= link_to "#{leader.login}", twitter_profile_url(leader) %></li>
+        <li><%= link_to "#{leader.login}", twitter_profile_url(leader) %> <%= leader.winnings.send(User::METHOD_MAP[params[:time_period] || 'all-time']).size %></li>
       <% end %>
     </ol>
   </section>

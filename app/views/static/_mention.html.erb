@@ -7,7 +7,7 @@
     <span class="author vcard">
       <a class="fn url" href="http://twitter.com/<%= mention['user']['screen_name'] -%>"><%= mention['user']['screen_name'] -%></a>
       <a href="http://twitter.com/<%= mention['user']['screen_name'] -%>/status/<%= mention['id'] -%>" class="date">
-        <abbr class="published" title="timestamp goes here">answered <%= time_ago_in_words(Time.parse(mention['created_at']), true) -%> ago</abbr>
+        <abbr class="published" title="view Tweet">answered <%= time_ago_in_words(Time.parse(mention['created_at']), true) -%> ago</abbr>
       </a>
     </span>
   </div>
