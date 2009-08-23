@@ -1,6 +1,8 @@
 class Question < ActiveRecord::Base
   belongs_to :winner, :class_name => 'User'
-  
+
+  validates_presence_of :title, :actors, :year
+
   named_scope :weekly, :conditions => ['updated_at > ?', 1.week.ago]
   named_scope :daily, :conditions => ['updated_at > ?', 1.day.ago]
   
