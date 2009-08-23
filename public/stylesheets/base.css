@@ -5,7 +5,7 @@ body 							{ background-color: transparent; margin: 0 auto; padding: 22px 0; wi
 .container 						{ /*-moz-box-shadow: 0px 0px 10px #C8C8C8; -webkit-box-shadow: 0px 0px 10px #C8C8C8;*/ /*background-color: #fff;*/ padding: 15px 15px 0 15px; margin: 0;/* -moz-border-radius: 10px; -webkit-border-radius: 10px;*/ }
 
 
-/*.container 						{ background: transparent url("../images/grid.png") repeat-y top center; }*/
+.container 						{ background: transparent url("../images/grid.png") repeat-y top center; }
 
 /* WIDELY USED CLASSES */
 .clear 							{ clear: both; }
@@ -34,16 +34,17 @@ header #user_bar img 			{ position: absolute; top:6px; left:10px; padding: 2px; 
 ------------------------------*/
 .content 						{ display: table; margin-bottom: 30px; }
 .body		 					{ display: table-cell; width: 620px; padding-right: 22px; }
-section							{ background-color: #fff; padding: 15px; margin-bottom: 15px; -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+section							{ border: 10px solid lightblue; background-color: #fff; padding: 15px; margin-bottom: 15px; -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 section header					{ margin-bottom: 8px; border-bottom: 1px solid #e1e1e1; }
-aside 							{ display: table-cell; width: 300px; }
+section header h2				{ position: relative; }
+aside 							{ display: table-cell; width: 280px; }
 aside section					{ background-color: #e5effb; margin-bottom: 0;  -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px;}
 aside section header			{ border-bottom: 1px solid #b1ccea; margin-top: 30px; }
 aside section header.first		{ margin-top: 0; }
 
-p.sort							{ text-align: right; border-bottom: 1px solid #b1ccea; padding-bottom: 8px; margin-bottom: 8px; }
-p.sort a						{ background-color: #ccc; -moz-border-radius: 4px; -webkit-border-radius: 4px; color: #fff; padding: 3px 5px; }
-p.sort a.current, p.sort a:hover.current	{ background-color: #083d6f;}
+span.sort										{ position: absolute; right: 0; top: 6px; font-size: 11px; text-align: right; display: inline-block; }
+span.sort a										{ background-color: #ccc; -moz-border-radius: 4px; -webkit-border-radius: 4px; color: #fff; padding: 3px 5px; }
+span.sort a.current, span.sort a:hover.current	{ background-color: #083d6f;}
 
 /* TWEETS
 ================================= */
@@ -63,7 +64,7 @@ ul.tweets li .tweet a.date				{ color: #8B8A8A; font-size:9px; text-decoration:n
 ul.tweets li .tweet a.date:hover		{ color: #555; }	
 ul.tweets li .tweet .ft					{ position: absolute; left: 7px; bottom: -9px; background: transparent url("../images/carrot.png") no-repeat 0 0; width:9px; height: 9px; }
 
-ul.tweets li .tweet p 					{ background-color: #fff; width: 420px; position: relative; padding: 5px 12px; margin: 0 68px 6px 0; line-height: 16px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #e1e1e1; }
+ul.tweets li .tweet p 					{ background-color: #fff; width: 398px; position: relative; padding: 5px 12px; margin: 0 68px 6px 0; line-height: 16px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #e1e1e1; }
 ul.tweets li .tweet h5 a 				{ color: #444; }
 
 ul.tweets li.winner						{ background-color: lightblue; }
@@ -135,6 +136,11 @@ ol.steps li.step1					{ background: transparent url("../images/step1.png") no-re
 ol.steps li.step2					{ background: transparent url("../images/step2.png") no-repeat 0 3px; padding-top: 0; padding-bottom: 7px; }
 ol.steps li.step3					{ background: transparent url("../images/step3.png") no-repeat 0 0; }
 ol.steps li.step4					{ background: transparent url("../images/step4.png") no-repeat 0 0; padding-top: 0; }
+
+
+ol.leaders 							{ list-style: none; margin: 0; }
+ol.leaders  li						{ margin-bottom: 5px; padding: 5px 12px 5px 12px; border-bottom: 1px dashed #b7d1ee; }
+ol.leaders  li span					{ margin-bottom: 0; font-size: 12px; font-weight: normal; }
 
 /* PAGINATION 
 ------------------------------*/
