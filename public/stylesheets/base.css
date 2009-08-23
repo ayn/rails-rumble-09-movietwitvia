@@ -132,7 +132,8 @@ footer section						{ padding-top: 2px; padding-bottom: 2px;}
 
 
 .hidden { display:none; }
-
+.credits { font-size:.8em; }
+.credits a { font-weight:bold; }
 
 
 
