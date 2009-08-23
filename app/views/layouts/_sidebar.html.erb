@@ -4,21 +4,23 @@
       <h2>How do I play?</h2>
     </header>
     
-      <ol>
-        <li>
-          associate your account
+      <ol class="steps">
+        <li class="step1">
+          <stong><%= link_to "Associate", '/login' %> your Twitter account</strong>
         </li>
 
-        <li>
+        <li class="step2">
           <%= link_to image_tag("http://static.twitter.com/images/business/follow/follow_twitter_button_d.png", :alt => "Follow us on Twitter"), "http://twitter.com/MovieTwitvia", :title => "Follow us on Twitter" %>
         </li>
         
-        <li>
-          Answer the question
-          example goes here
+        <li class="step3">
+          <strong>We'll send you a questions out via @MovieTwitvia</strong>
+			"What movie did Woody Allen, Diane Keaton, and Tony Roberts star in 1977?"
+		  <strong>Just give us the answer</strong>
+          "@MovieTwitvia is it Annie Hall?"
         </li>
         
-        <li>Answer the question and sit tight and find out if you are the winner of the round</li>
+        <li class="step4"><strong>Sit tight and find out if you are the winner of the round and get ready for the next question</strong></li>
       </ol>
 
     <header>
@@ -51,7 +53,7 @@
       title: '',
       subject: '',
       width: 270,
-      height: 250,
+      height: 150,
       theme: {
         shell: {
           background: '',
@@ -60,7 +62,7 @@
         tweets: {
           background: '#E5EFFB',
           color: '',
-          links: ''
+          links: '#007195'
         }
       }
     }).render().start();

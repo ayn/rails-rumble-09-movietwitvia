@@ -31,7 +31,8 @@ h4 img, h5 img, h6 img {
 p { line-height:1.5em; margin-bottom:1em; }
  
 a:focus   	{ outline: none; }
-a      		{ color: #105CB6; text-decoration: none; }
+a:hover		{ color: #004E67; }
+a      		{ color: #007195; text-decoration: none; }
  
  
 blockquote { font-family: Georgia,serif; color: #666; font-size: 1.3em; line-height:1.5em; padding:1.75em 3em 0.1em 6em; background: #D7E7FD url("../images/icons/open-quote.gif") no-repeat scroll 8px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; margin-bottom: .75em; -moz-border-radius-topleft: 30px; -webkit-border-top-left-radius: 30px; }
