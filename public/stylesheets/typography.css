@@ -12,8 +12,8 @@ body { font: 75%  Helvetica, "Helvetica Neue", Arial, sans-serif; color: #363636
  
 h1,h2,h3,h4,h5,h6 { font-weight: normal; }
  
-h1 { font-size: 3em; padding-bottom: 5px; }
-h2 { font-size: 2em; padding-bottom: 5px; font-weight: normal; }
+h1 { font-size: 3em; padding-bottom: 5px; font-family: "adrianna-condensed-demibold-1","adrianna-condensed-demibold-2", Helvetica, "Helvetica Neue", Arial, sans-serif;}
+h2 { font-size: 2em; padding-bottom: 5px; font-weight: normal; font-family: "adrianna-condensed-demibold-1","adrianna-condensed-demibold-2", Helvetica, "Helvetica Neue", Arial, sans-serif; }
 h3 { font-size: 1.5em; padding-bottom: 5px; }
 h4 { font-size: 1em; line-height: 1.25; margin-bottom: 1.25em; }
 h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
