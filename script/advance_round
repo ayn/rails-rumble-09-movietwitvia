@@ -1,0 +1,25 @@
+
+since_id = Rails.cache.read('max_tweet_id_from_last_round')
+
+req = "/statuses/mentions.json?count=200"
+req += "&since_id=#{since_id}" if since_id
+
+mentions = User.find_by_twitter_id('67771125').twitter.get(req)
+question = Question.next_random_question
+
+@got_winner = false
+mentions.reverse.each do |m|
+  if question.match_title(m['text'])
+    question.tweet_winner(m['user']['screen_name'])
+    question.finalize(m['user']['id'])
+    @got_winner = true
+    break
+  end
+end
+
+if @got_winner || question.updated_at < 30.minutes.ago
+  Rails.cache.write('max_tweet_id_from_last_round', mentions.first['id'])
+  next_question = Question.find(((rand*(Question.count))+Question.first.id).truncate, :conditions => ['winner_id IS NULL'])
+  question.update_attribute(:is_current, false)
+  next_question.send_tweet
+end

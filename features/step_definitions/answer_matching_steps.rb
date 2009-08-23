@@ -19,13 +19,13 @@ Given /^the movie title was "([^\"]*)"$/ do |title|
 end
 
 When /^we compare them the answers$/ do
-  @result = @movie.match_title(@status)
+  @result = @movie.match_title(@status.text)
 end
 
 Then /^we should announce the winner$/ do
   Twitter::Client.expects(:from_config).with(File.join(RAILS_ROOT, 'config', 'twitter4r.yml')).returns(@t = mock('twitter'))
   @t.expects(:status).with(:post, "The winner is @ang_410.").returns(stub(:id => '123'))
-  @movie.tweet_winner(@status)
+  @movie.tweet_winner(@status.user.screen_name)
 end
 
 Then /^match should return "([^\"]*)"$/ do |truth|
@@ -35,7 +35,7 @@ end
 Then /^we record the winner$/ do
   User.expects(:find_by_twitter_id).with("5483072").returns(@u=stub(:id => 123, :wins_count => 0))
   @u.expects(:update_attribute).with(:wins_count, 1)
-  @movie.finalize(@status)
+  @movie.finalize(@status.user.id.to_s)
   @movie.reload.winner_id.should == 123
 end
 

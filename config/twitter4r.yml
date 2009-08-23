@@ -1,3 +1,6 @@
+development:
+  login: MovieTwitvia
+  password: aux9cag6aj3waik2vij4eg9dan6mib8dyp7vigh5deg7bin2es
 test:
   login: twitter4r
   password: rubyr0cks
