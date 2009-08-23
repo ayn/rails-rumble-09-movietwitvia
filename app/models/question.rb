@@ -18,7 +18,7 @@ class Question < ActiveRecord::Base
   end
   
   def match_title(text)
-    !text.match(/#{title}/i).nil?
+    !text.match(/#{CGI.unescapeHTML(title)}/i).nil?
   end
   
   def tweet_winner(screen_name)
