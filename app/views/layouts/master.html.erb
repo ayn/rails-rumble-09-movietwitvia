@@ -48,6 +48,16 @@
       </div>
       <%= render "layouts/sidebar" %>
     </div>
+	
+	<% if @users.any? %>
+	<section id="contestants">
+	  <header><h2>The Contestants</h2></header>
+	  <% for user in @users %>
+	    <%= link_to profile_image(user), twitter_profile_url(user), :target => "_blank" %>
+	  <% end %>
+	</section>
+	<% end %>
+
     <%= render "layouts/footer" %>
   </div>
   <%#= render "layouts/analytics" %>
