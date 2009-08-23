@@ -35,4 +35,35 @@
       <% end %>
     </ol>
   </section>
+  
+  <section>
+    <header>
+      <h2>Latest Winning Tweets</h2>
+    </header>
+    <div id="twtr-search-widget"></div>
+    <script src="http://widgets.twimg.com/j/1/widget.js"></script>
+    <link href="http://widgets.twimg.com/j/1/widget.css" type="text/css" rel="stylesheet">
+    <script>
+    new TWTR.Widget({
+      search: '#MovieTwitvia won from:MovieTwitvia',
+      id: 'twtr-search-widget',
+      loop: false,
+      title: '',
+      subject: '',
+      width: 270,
+      height: 300,
+      theme: {
+        shell: {
+          background: '#093e70',
+          color: '#fffff'
+        },
+        tweets: {
+          background: '#ffffff',
+          color: '#444444',
+          links: '#1985b5'
+        }
+      }
+    }).render().start();
+    </script>
+  </section>
 </aside>
