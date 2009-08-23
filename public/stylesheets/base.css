@@ -116,9 +116,14 @@ aside section ul li					{ margin-bottom: 8px; }
 aside section ul li a 				{ display: block; text-decoration: none; color: #000; }
 aside section ul li a:hover 		{ text-decoration: underline; }
 
-#twtr-search-widget .twtr-doc .twtr-hd 		{ display: none; }
-#twtr-search-widget .twtr-doc .twtr-ft		{ display: none; }
+#twtr-search-widget .twtr-doc .twtr-hd,
+#twtr-search-widget .twtr-doc .twtr-ft,
+#twtr-search-widget .twtr-doc .twtr-hashtag,
+#twtr-search-widget .twtr-doc .twtr-user,
+#twtr-search-widget .twtr-doc .twtr-tweet-text i a.twtr-reply		{ display: none; } 
 
+#twtr-search-widget .twtr-doc .twtr-tweet-text i		{ display: block;}
+#twtr-search-widget .twtr-doc .twtr-tweet-text i a	{ color: #8B8A8A; font-size:9px; text-decoration:none; text-transform: lowercase; }
 #twtr-search-widget .twtr-doc .twtr-img		{ margin-left: 0; padding: 2px; height: 48px; width: 48px; float: left; border: 1px solid #e1e1e1; background-color: #fff; }
 #twtr-search-widget .twtr-doc .twtr-tweet-text { padding-left: 68px; }
 
