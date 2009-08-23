@@ -32,7 +32,7 @@ class Question < ActiveRecord::Base
   end
   
   def self.next_random_question
-    Rails.cache.fetch('current_question') { Question.find((rand*(Question.count)).truncate, :conditions => ['winner_id IS NULL']) }
+    Rails.cache.fetch('current_question') { Question.find(((rand*(Question.count))+Question.first.id).truncate, :conditions => ['winner_id IS NULL']) }
   end
   
   protected
