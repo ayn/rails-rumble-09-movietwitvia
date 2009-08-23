@@ -47,15 +47,11 @@
     <div id="twtr-search-widget"></div>
     <script src="http://widgets.twimg.com/j/1/widget.js"></script>
     <link href="http://widgets.twimg.com/j/1/widget.css" type="text/css" rel="stylesheet">
-    <style>
-    .twtr-bd{padding:0;}
-    .twtr-timeline{-moz-border-radius-bottomleft:0;-moz-border-radius-bottomright:0;-moz-border-radius-topleft:0;-moz-border-radius-topright:0;}
-    </style>
     <script>
     new TWTR.Widget({
       search: 'from:MovieTwitvia won',
       id: 'twtr-search-widget',
-      loop: true,
+      loop: false,
       title: '',
       subject: '',
       width: 250,

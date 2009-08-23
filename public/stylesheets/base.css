@@ -38,7 +38,7 @@ header #user_bar img 			{ position: absolute; top:6px; left:10px; padding: 2px; 
 section							{ border: 10px solid lightblue; background-color: #fff; padding: 15px; margin-bottom: 15px; -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 section header					{ margin-bottom: 8px; border-bottom: 1px solid #e1e1e1; }
 section header h2				{ position: relative; }
-aside 							{ display: table-cell; width: 280px; }
+aside 							{ display: table-cell; width: 300px; }
 aside section					{ background-color: #e5effb; margin-bottom: 0;  -moz-box-shadow: 0px 0px 10px #00274c; -webkit-box-shadow: 0px 0px 10px #00274c;  -moz-border-radius: 4px; -webkit-border-radius: 4px;}
 aside section header			{ border-bottom: 1px solid #b1ccea; margin-top: 30px; }
 aside section header.first		{ margin-top: 0; }
@@ -126,12 +126,15 @@ aside section ul li a:hover 		{ text-decoration: underline; }
 #twtr-search-widget .twtr-doc .twtr-ft,
 #twtr-search-widget .twtr-doc .twtr-hashtag,
 #twtr-search-widget .twtr-doc .twtr-user,
-#twtr-search-widget .twtr-doc .twtr-tweet-text i a.twtr-reply		{ display: none; } 
+#twtr-search-widget .twtr-doc .twtr-tweet-text i a.twtr-reply		{ display: none; }
+#twtr-search-widget .twtr-bd		{padding:0;}
+#twtr-search-widget .twtr-timeline 	{-moz-border-radius-bottomleft:0;-moz-border-radius-bottomright:0;-moz-border-radius-topleft:0;-moz-border-radius-topright:0; }
 
+#twtr-search-widget .twtr-tweet-wrap		{ padding-left: 0; padding-right: 0; !important }
 #twtr-search-widget .twtr-doc .twtr-tweet-text i		{ display: block;}
 #twtr-search-widget .twtr-doc .twtr-tweet-text i a	{ color: #8B8A8A; font-size:9px; text-decoration:none; text-transform: lowercase; }
 #twtr-search-widget .twtr-doc .twtr-img		{ margin-left: 0; padding: 2px; height: 48px; width: 48px; float: left; border: 1px solid #e1e1e1; background-color: #fff; }
-#twtr-search-widget .twtr-doc .twtr-tweet-text { padding-left: 68px; }
+#twtr-search-widget .twtr-doc .twtr-tweet-text { padding-left: 10px; }
 
 ol.steps 							{ list-style: none; margin: 0; }
 ol.steps li							{ margin-bottom: 10px; padding: 4px 0 0px 35px; border-bottom: 1px dashed #b7d1ee; }
