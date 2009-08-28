@@ -14,7 +14,7 @@ class Question < ActiveRecord::Base
   end
   
   def get_question(options={})
-    r = %Q{What movie did #{actors.split(/, /).to_sentence} star in #{year}? #MovieTwitvia #RailsRumble}
+    r = %Q{What movie did #{actors.split(/, /).to_sentence} star in #{year}? #MovieTwitvia}
     options.delete(:insert_spans) ? r.gsub(/#\w+/) { |s| "<span>#{s}</span>" } : r
   end
   
@@ -25,7 +25,7 @@ class Question < ActiveRecord::Base
   def tweet_winner(screen_name)
     setup_twitter
     name = title[0..59]
-    s = "#MovieTwitvia #RailsRumble @#{screen_name} won! The movie was #{name}. http://www.amazon.com/s/?url=search-alias=aps&field-keywords=#{URI.encode(title)}&tag=carmudgeonsco-20&link_code=wql&camp=212361&creative=380601&_encoding=UTF-8"
+    s = "#MovieTwitvia @#{screen_name} won! The movie was #{name}. http://www.amazon.com/s/?url=search-alias=aps&field-keywords=#{URI.encode(title)}&tag=carmudgeonsco-20&link_code=wql&camp=212361&creative=380601&_encoding=UTF-8"
     @twitter.status(:post, s)
   end
   

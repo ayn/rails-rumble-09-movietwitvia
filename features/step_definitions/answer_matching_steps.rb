@@ -25,7 +25,7 @@ end
 Then /^we should announce the winner$/ do
   Twitter::Client.expects(:from_config).with(File.join(RAILS_ROOT, 'config', 'twitter4r.yml'), 'test').returns(@t = mock('twitter'))
   name = @movie.title[0..59]
-  s = "#MovieTwitvia #RailsRumble @ang_410 won! The movie was #{name}. http://www.amazon.com/s/?url=search-alias=aps&field-keywords=#{URI.encode(@movie.title)}&tag=carmudgeonsco-20&link_code=wql&camp=212361&creative=380601&_encoding=UTF-8"
+  s = "#MovieTwitvia @ang_410 won! The movie was #{name}. http://www.amazon.com/s/?url=search-alias=aps&field-keywords=#{URI.encode(@movie.title)}&tag=carmudgeonsco-20&link_code=wql&camp=212361&creative=380601&_encoding=UTF-8"
   @t.expects(:status).with(:post, s).returns(stub(:id => '123'))
   @movie.tweet_winner(@status.user.screen_name)
 end
