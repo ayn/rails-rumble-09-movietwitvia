@@ -12,7 +12,7 @@ set :git_enable_submodules, true
 set :deploy_via, :remote_cache
 
 # Set the Git branch to deploy from
-set :branch , "railsrumble09"
+set :branch , "master"
 
 # Set the deploy path on the server
 set :deploy_to, "/home/deployer/apps/#{application}"
